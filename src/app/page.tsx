@@ -1,9 +1,9 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-   <div>
-    My Portfolio
+   <div className="flex justify-center items-center h-screen">
+    <Button variant={"outline"}>Click me</Button>
    </div>
   );
 }
