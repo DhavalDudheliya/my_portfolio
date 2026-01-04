@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button";
+import Container from "@/components/core/Container";
+import Hero from "@/components/home/Hero";
 
 export default function Home() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <Button variant={"outline"}>Click me</Button>
-    </div>
+    <Container className="min-h-screen py-12">
+      <Hero />
+    </Container>
   );
 }
