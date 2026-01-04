@@ -9,7 +9,7 @@ import { ThemeToggleButton } from "./ThemeSwitch";
 const Navbar = () => {
   return (
     <Container className="sticky top-0 z-20 rounded-md py-4 backdrop-blur-sm">
-      <div className="flex items-center justify-between px-6">
+      <div className="flex items-center justify-between px-2 md:px-6">
         <div className="flex items-baseline gap-4">
           <Link href="/">
             <Image
@@ -23,7 +23,11 @@ const Navbar = () => {
         </div>
         <div className="flex items-center justify-center gap-4">
           {navItems.map((item) => (
-            <Link className="group relative" key={item.label} href={item.href}>
+            <Link
+              className="group relative text-xs md:text-base"
+              key={item.label}
+              href={item.href}
+            >
               {item.label}
               <span className="bg-primary absolute -bottom-0.5 left-1/2 h-0.5 w-0 transition-all duration-300 ease-out group-hover:left-0 group-hover:w-full" />
             </Link>

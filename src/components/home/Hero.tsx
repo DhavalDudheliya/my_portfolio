@@ -37,7 +37,7 @@ const Hero = () => {
           </h1>
         </div>
       </div>
-      <div className="mt-6 text-center text-base leading-9 text-neutral-500 md:text-left md:text-lg">
+      <div className="mt-6 text-center text-sm leading-9 text-neutral-500 md:text-left md:text-lg">
         {description}
       </div>
 

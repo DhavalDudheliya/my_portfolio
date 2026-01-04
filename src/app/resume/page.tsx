@@ -14,10 +14,10 @@ export default function ResumePage() {
           <Link href="/" className="absolute top-1/2 left-0 -translate-y-1/2">
             <Button
               variant="ghost"
-              className="hover:text-primary/70 gap-2 pl-0 hover:bg-transparent"
+              className="hover:text-primary/70 group gap-2 pl-2 hover:bg-transparent"
             >
-              <ArrowLeft className="h-4 w-4" />
-              Back to Home
+              <ArrowLeft className="size-5 transition duration-300 ease-in-out group-hover:-translate-x-1 md:size-4" />
+              <span className="hidden md:inline">Back to Home</span>
             </Button>
           </Link>
           <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
