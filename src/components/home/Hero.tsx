@@ -1,10 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { heroConfig, socialLinks } from "@/config/Hero";
 import { cn } from "@/lib/utils";
 
 import Container from "../core/Container";
 import SocialLink from "../core/SocialLink";
+import CV from "../svgs/CV";
+import SendIcon from "../svgs/SendIcon";
+import { Button } from "../ui/button";
 
 const Hero = () => {
   const { name, title, avatar, description } = heroConfig;
@@ -35,6 +39,25 @@ const Hero = () => {
       </div>
       <div className="mt-6 text-center text-base leading-9 text-neutral-500 md:text-left md:text-lg">
         {description}
+      </div>
+
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
+        <Button variant={"default"} size={"lg"} className="w-full">
+          <Link
+            href="/resume"
+            className="flex w-full items-center justify-center gap-2"
+          >
+            <CV className="size-5" /> Resume / CV
+          </Link>
+        </Button>
+        <Button variant="default" size={"lg"} className="w-full">
+          <Link
+            href="#contacts"
+            className="flex w-full items-center justify-center gap-2"
+          >
+            <SendIcon className="size-5" /> Get in touch
+          </Link>
+        </Button>
       </div>
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
