@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import Container from './Container';
-import Link from 'next/link';
-import { navItems } from '@/config/Navbar';
-import { ThemeToggleButton } from './ThemeSwitch';
+import Image from "next/image";
+import Container from "./Container";
+import Link from "next/link";
+import { navItems } from "@/config/Navbar";
+import { ThemeToggleButton } from "./ThemeSwitch";
 
 const Navbar = () => {
     return (
@@ -11,7 +11,7 @@ const Navbar = () => {
                 <div className="flex items-baseline gap-4">
                     <Link href="/">
                         <Image
-                            className="h-10 w-10 rounded-full border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300"
+                            className="h-10 w-10 border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300"
                             src={"/assets/me.jpg"}
                             alt="me"
                             width={100}
@@ -21,13 +21,9 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center justify-center gap-4">
                     {navItems.map((item) => (
-                        <Link
-                            className="group relative"
-                            key={item.label}
-                            href={item.href}
-                        >
+                        <Link className="group relative" key={item.label} href={item.href}>
                             {item.label}
-                            <span className="absolute -bottom-0.5 left-1/2 w-0 h-0.5 bg-primary group-hover:w-full group-hover:left-0 transition-all duration-300 ease-out" />
+                            <span className="bg-primary absolute -bottom-0.5 left-1/2 h-0.5 w-0 transition-all duration-300 ease-out group-hover:left-0 group-hover:w-full" />
                         </Link>
                     ))}
                     <div className="flex items-center gap-4">
@@ -36,7 +32,7 @@ const Navbar = () => {
                 </div>
             </div>
         </Container>
-    )
-}
+    );
+};
 
 export default Navbar;

@@ -65,8 +65,7 @@ export function useThemeToggle() {
 
   const toggleTheme = useCallback(
     (event?: React.MouseEvent) => {
-      
-      // inject styles for transition  
+      // inject styles for transition
       injectStyles();
 
       // play sound
@@ -92,7 +91,7 @@ export function useThemeToggle() {
       // if view transition supported, use it
       document.startViewTransition(switchTheme);
     },
-    [isDark, setTheme]
+    [isDark, setTheme],
   );
 
   return { isDark, toggleTheme };

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { Button } from '../ui/button';
-import Moon from '../svgs/Moon';
-import Sun from '../svgs/Sun';
-import { useThemeToggle } from '@/hooks/use-theme-toggle';
+import { Button } from "../ui/button";
+import Moon from "../svgs/Moon";
+import Sun from "../svgs/Sun";
+import { useThemeToggle } from "@/hooks/use-theme-toggle";
 
 export function ThemeToggleButton() {
   const { isDark, toggleTheme } = useThemeToggle();
