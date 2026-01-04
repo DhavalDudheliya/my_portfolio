@@ -3,9 +3,9 @@
 import { Autocomplete as AutocompletePrimitive } from "@base-ui/react/autocomplete";
 import { ChevronsUpDownIcon, XIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
 
 const Autocomplete = AutocompletePrimitive.Root;
 
@@ -281,18 +281,18 @@ function AutocompleteTrigger({
 
 export {
   Autocomplete,
-  AutocompleteInput,
-  AutocompleteTrigger,
-  AutocompletePopup,
-  AutocompleteItem,
-  AutocompleteSeparator,
+  AutocompleteClear,
+  AutocompleteCollection,
+  AutocompleteEmpty,
   AutocompleteGroup,
   AutocompleteGroupLabel,
-  AutocompleteEmpty,
-  AutocompleteValue,
+  AutocompleteInput,
+  AutocompleteItem,
   AutocompleteList,
-  AutocompleteClear,
-  AutocompleteStatus,
+  AutocompletePopup,
   AutocompleteRow,
-  AutocompleteCollection,
+  AutocompleteSeparator,
+  AutocompleteStatus,
+  AutocompleteTrigger,
+  AutocompleteValue,
 };

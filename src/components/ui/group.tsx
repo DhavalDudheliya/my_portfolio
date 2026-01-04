@@ -3,8 +3,8 @@ import { useRender } from "@base-ui/react/use-render";
 import { cva, type VariantProps } from "class-variance-authority";
 import type * as React from "react";
 
-import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 const groupVariants = cva(
   "flex w-fit *:focus-visible:z-10 has-[>[data-slot=group]]:gap-2 *:has-focus-visible:z-10",
@@ -85,11 +85,11 @@ function GroupSeparator({
 }
 
 export {
-  Group,
   Group as ButtonGroup,
-  GroupText,
-  GroupText as ButtonGroupText,
-  GroupSeparator,
   GroupSeparator as ButtonGroupSeparator,
+  GroupText as ButtonGroupText,
+  Group,
+  GroupSeparator,
+  GroupText,
   groupVariants,
 };

@@ -1,7 +1,9 @@
 import Image from "next/image";
-import Container from "./Container";
 import Link from "next/link";
+
 import { navItems } from "@/config/Navbar";
+
+import Container from "./Container";
 import { ThemeToggleButton } from "./ThemeSwitch";
 
 const Navbar = () => {

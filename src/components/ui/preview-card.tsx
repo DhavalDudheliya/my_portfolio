@@ -46,10 +46,10 @@ function PreviewCardPopup({
 }
 
 export {
-  PreviewCard,
   PreviewCard as HoverCard,
-  PreviewCardTrigger,
-  PreviewCardTrigger as HoverCardTrigger,
-  PreviewCardPopup,
   PreviewCardPopup as HoverCardContent,
+  PreviewCardTrigger as HoverCardTrigger,
+  PreviewCard,
+  PreviewCardPopup,
+  PreviewCardTrigger,
 };

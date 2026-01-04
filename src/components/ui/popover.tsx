@@ -93,12 +93,12 @@ function PopoverDescription({
 }
 
 export {
-  PopoverCreateHandle,
   Popover,
-  PopoverTrigger,
-  PopoverPopup,
-  PopoverPopup as PopoverContent,
-  PopoverTitle,
-  PopoverDescription,
   PopoverClose,
+  PopoverPopup as PopoverContent,
+  PopoverCreateHandle,
+  PopoverDescription,
+  PopoverPopup,
+  PopoverTitle,
+  PopoverTrigger,
 };

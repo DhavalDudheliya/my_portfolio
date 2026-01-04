@@ -56,10 +56,10 @@ function TooltipPopup({
 }
 
 export {
-  TooltipCreateHandle,
-  TooltipProvider,
   Tooltip,
-  TooltipTrigger,
-  TooltipPopup,
   TooltipPopup as TooltipContent,
+  TooltipCreateHandle,
+  TooltipPopup,
+  TooltipProvider,
+  TooltipTrigger,
 };

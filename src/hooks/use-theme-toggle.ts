@@ -1,5 +1,6 @@
 import { useTheme } from "next-themes";
 import { useCallback, useEffect, useState } from "react";
+
 import { useThemeSound } from "./use-theme-sound";
 
 const STYLE_ID = "simple-theme-transition";
