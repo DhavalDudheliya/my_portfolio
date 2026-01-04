@@ -1,9 +1,10 @@
 import Image from "next/image";
 
-import { heroConfig } from "@/config/Hero";
+import { heroConfig, socialLinks } from "@/config/Hero";
 import { cn } from "@/lib/utils";
 
 import Container from "../core/Container";
+import SocialLink from "../core/SocialLink";
 
 const Hero = () => {
   const { name, title, avatar, description } = heroConfig;
@@ -34,6 +35,12 @@ const Hero = () => {
       </div>
       <div className="mt-6 text-center text-base leading-9 text-neutral-500 md:text-left md:text-lg">
         {description}
+      </div>
+
+      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
+        {socialLinks.map((link) => (
+          <SocialLink key={link.name} {...link} />
+        ))}
       </div>
     </Container>
   );

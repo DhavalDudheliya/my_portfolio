@@ -1,4 +1,8 @@
 import Skill from "@/components/core/Skill";
+import Github from "@/components/svgs/Github";
+import LinkedIn from "@/components/svgs/LinkedIn";
+import Mail from "@/components/svgs/Mail";
+import X from "@/components/svgs/X";
 import MongoDB from "@/components/technologies/MongoDB";
 import NextJs from "@/components/technologies/NextJs";
 import NodeJs from "@/components/technologies/NodeJs";
@@ -68,3 +72,30 @@ export const heroConfig = {
     </>
   ),
 };
+
+export const socialLinks = [
+  {
+    name: "X (formerly Twitter)",
+    username: "@Dhaval_1364",
+    href: "https://x.com/Dhaval_1364",
+    icon: <X />,
+  },
+  {
+    name: "LinkedIn",
+    username: "@dhavaldudheliya1309",
+    href: "www.linkedin.com/in/dhavaldudheliya1309",
+    icon: <LinkedIn />,
+  },
+  {
+    name: "Github",
+    username: "@DhavalDudheliya",
+    href: "https://github.com/DhavalDudheliya",
+    icon: <Github />,
+  },
+  {
+    name: "Email",
+    username: "dhavaldudheliya77@gmail.com",
+    href: "mailto:dhavaldudheliya77@gmail.com",
+    icon: <Mail />,
+  },
+];
