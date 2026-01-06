@@ -6,7 +6,7 @@ import { ExperienceItem } from './ExperienceItem'
 const Experiences = () => {
     return (
         <Container className='mt-20 mx-auto'>
-            <h2 className='text-3xl font-bold mb-12'>Experiences</h2>
+            <h2 className='text-3xl font-bold mb-4'>Experiences</h2>
 
             <div>
                 {EXPERIENCES.map((experience) => (

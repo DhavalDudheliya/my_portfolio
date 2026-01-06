@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
 import { ExperiencePosition } from "@/config/Experiences";
-import { Badge } from "../ui/badge";
+import { SkillBadge } from "./SkillBadge";
 import { Markdown } from "../core/Markdown";
 import { ProseMono } from "@/components/ui/typography";
 
@@ -26,10 +26,10 @@ export function ExperiencePositionItem({
                 <CollapsibleTrigger
                     className={cn(
                         "block w-full text-left",
-                        "relative before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-7 before:-z-1 before:rounded-lg before:transition-[background-color] before:ease-out hover:before:bg-accent"
+                        "relative before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-8 before:-z-1 before:rounded-lg before:transition-[background-color] before:ease-out hover:before:bg-accent"
                     )}
                 >
-                    <div className="relative z-1 mb-1 flex items-center gap-3">
+                    <div className="relative z-1 mb-1 flex items-center gap-4">
                         <div
                             className={cn(
                                 "flex size-6 shrink-0 items-center justify-center rounded-lg",
@@ -53,7 +53,7 @@ export function ExperiencePositionItem({
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-2 pl-9 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2 pl-10 text-sm text-muted-foreground">
                         {position.employmentType && (
                             <>
                                 <dl>
@@ -101,7 +101,7 @@ export function ExperiencePositionItem({
                     <ul className="flex flex-wrap gap-1.5 pt-3 pl-9">
                         {position.skills.map((skill, index) => (
                             <li key={index} className="flex">
-                                <Badge>{skill}</Badge>
+                                <SkillBadge>{skill}</SkillBadge>
                             </li>
                         ))}
                     </ul>
