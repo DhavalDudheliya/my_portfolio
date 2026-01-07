@@ -1,13 +1,8 @@
-import Skill from "@/components/core/Skill";
+import { SkillBadge } from "@/components/experience/SkillBadge";
 import Github from "@/components/svgs/Github";
 import LinkedIn from "@/components/svgs/LinkedIn";
 import Mail from "@/components/svgs/Mail";
 import X from "@/components/svgs/X";
-import MongoDB from "@/components/technologies/MongoDB";
-import NextJs from "@/components/technologies/NextJs";
-import NodeJs from "@/components/technologies/NodeJs";
-import ReactIcon from "@/components/technologies/ReactIcon";
-import TypeScript from "@/components/technologies/TypeScript";
 
 export const heroConfig = {
   // Personal Information
@@ -48,27 +43,13 @@ export const heroConfig = {
   description: (
     <>
       I build <strong>pixel-perfect</strong>, <strong>user-friendly</strong> web
-      applications and develop <strong>reliable backend </strong> using{" "}
-      <Skill name="TypeScript" href="https://www.typescriptlang.org/">
-        <TypeScript />
-      </Skill>
-      ,{" "}
-      <Skill name="React" href="https://react.dev/">
-        <ReactIcon />
-      </Skill>
-      ,{" "}
-      <Skill name="NextJs" href="https://nextjs.org/">
-        <NextJs />
-      </Skill>
-      ,{" "}
-      <Skill name="NodeJs" href="https://nodejs.org/">
-        <NodeJs />
-      </Skill>{" "}
-      and{" "}
-      <Skill name="MongoDB" href="https://www.mongodb.com/">
-        <MongoDB />
-      </Skill>
-      , with a strong focus on performance, scalability, and clean UX.
+      applications and develop <strong>reliable backend</strong> using{" "}
+      <SkillBadge className="align-middle px-2 py-1">TypeScript</SkillBadge>,{" "}
+      <SkillBadge className="align-middle px-2 py-1">React</SkillBadge>,{" "}
+      <SkillBadge className="align-middle px-2 py-1">Next.js</SkillBadge>,{" "}
+      <SkillBadge className="align-middle px-2 py-1">Node.js</SkillBadge> and{" "}
+      <SkillBadge className="align-middle px-2 py-1">MongoDB</SkillBadge>, with a strong
+      focus on performance, scalability, and clean UX.
     </>
   ),
 };

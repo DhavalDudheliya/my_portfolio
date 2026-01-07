@@ -30,6 +30,12 @@ export type Experience = {
     companyLogo?: string;
     /** Roles held at this company; keep newest first for display. */
     positions: ExperiencePosition[];
+    links?: {
+        website?: string;
+        linkedin?: string;
+        x?: string;
+        github?: string;
+    };
     /** Marks the company as the current employer for highlighting. */
     isCurrentEmployer?: boolean;
 };
@@ -37,8 +43,14 @@ export type Experience = {
 export const EXPERIENCES: Experience[] = [
     {
         id: "1",
-        companyName: "WhiteStone Infotech Pvt. Ltd.",
+        companyName: "WhiteStone Infotech",
         companyLogo: "/assets/whitestoneinfotech.png",
+        links: {
+            website: "https://whitestoneinfotech.com",
+            linkedin: "https://linkedin.com/company/whitestone",
+            x: "https://x.com/whitestone",
+            github: "https://github.com/whitestone",
+        },
         positions: [
             {
                 id: "1",
@@ -83,7 +95,7 @@ export const EXPERIENCES: Experience[] = [
     },
     {
         id: "2",
-        companyName: "WhiteStone Infotech Pvt. Ltd.",
+        companyName: "WhiteStone Infotech",
         companyLogo: "/assets/whitestoneinfotech.png",
         positions: [
             {
@@ -103,7 +115,7 @@ export const EXPERIENCES: Experience[] = [
 - Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
                 icon: <User2 />,
                 skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma"],
-                isExpanded: true,
+                isExpanded: false,
             },
             {
                 id: "2",
@@ -122,7 +134,7 @@ export const EXPERIENCES: Experience[] = [
 - Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
                 icon: <User2 />,
                 skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma"],
-                isExpanded: true,
+                isExpanded: false,
             },
         ],
         isCurrentEmployer: true,
