@@ -30,16 +30,31 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
                     )}
                 >
                     {experience.companyLogo ? (
-                        <Image
-                            src={experience.companyLogo}
-                            alt={experience.companyName}
-                            width={40}
-                            height={40}
-                            quality={100}
-                            className="rounded-full"
-                            unoptimized
-                            aria-hidden
-                        />
+                        experience.links?.website ? (
+                            <Link href={experience.links.website} target="_blank" rel="noopener noreferrer">
+                                <Image
+                                    src={experience.companyLogo}
+                                    alt={experience.companyName}
+                                    width={40}
+                                    height={40}
+                                    quality={100}
+                                    className="rounded-full hover:opacity-80 transition-opacity"
+                                    unoptimized
+                                    aria-hidden
+                                />
+                            </Link>
+                        ) : (
+                            <Image
+                                src={experience.companyLogo}
+                                alt={experience.companyName}
+                                width={40}
+                                height={40}
+                                quality={100}
+                                className="rounded-full"
+                                unoptimized
+                                aria-hidden
+                            />
+                        )
                     ) : (
                         <span className="flex size-10 rounded-full bg-zinc-300 dark:bg-zinc-600" />
                     )}
@@ -47,9 +62,22 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
 
                 <div className="flex flex-col gap-1">
                     <div className="flex items-center gap-4">
-                        <h3 className="text-lg leading-snug font-medium">
-                            {experience.companyName}
-                        </h3>
+                        {experience.links?.website ? (
+                            <Link
+                                href={experience.links.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:underline transition-all"
+                            >
+                                <h3 className="text-lg leading-snug font-medium">
+                                    {experience.companyName}
+                                </h3>
+                            </Link>
+                        ) : (
+                            <h3 className="text-lg leading-snug font-medium">
+                                {experience.companyName}
+                            </h3>
+                        )}
 
                         {experience.isCurrentEmployer && (
                             <span className="relative flex items-center justify-center">
@@ -62,80 +90,57 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
 
                     {experience.links && (
                         <div className="flex items-center gap-2 text-muted-foreground">
-                            <>
-                                {experience.links.website && (
-                                    <Tooltip>
+                            {[
+                                {
+                                    key: "website",
+                                    url: experience.links.website,
+                                    icon: Globe,
+                                    label: "Website",
+                                    tooltip: "Visit Website",
+                                },
+                                {
+                                    key: "linkedin",
+                                    url: experience.links.linkedin,
+                                    icon: Linkedin,
+                                    label: "LinkedIn",
+                                    tooltip: "Connect on LinkedIn",
+                                },
+                                {
+                                    key: "x",
+                                    url: experience.links.x,
+                                    icon: FaXTwitter,
+                                    label: "X",
+                                    tooltip: "Follow on X",
+                                },
+                                {
+                                    key: "github",
+                                    url: experience.links.github,
+                                    icon: Github,
+                                    label: "GitHub",
+                                    tooltip: "View GitHub",
+                                },
+                            ].map((link) => {
+                                if (!link.url) return null;
+                                const Icon = link.icon;
+                                return (
+                                    <Tooltip key={link.key}>
                                         <TooltipTrigger
                                             render={
                                                 <Link
-                                                    href={experience.links.website}
+                                                    href={link.url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="hover:text-foreground transition-colors"
                                                 >
-                                                    <Globe className="size-3.5" />
-                                                    <span className="sr-only">Website</span>
+                                                    <Icon className="size-3.5" />
+                                                    <span className="sr-only">{link.label}</span>
                                                 </Link>
                                             }
                                         />
-                                        <TooltipContent>Visit Website</TooltipContent>
+                                        <TooltipContent>{link.tooltip}</TooltipContent>
                                     </Tooltip>
-                                )}
-                                {experience.links.linkedin && (
-                                    <Tooltip>
-                                        <TooltipTrigger
-                                            render={
-                                                <Link
-                                                    href={experience.links.linkedin}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="hover:text-foreground transition-colors"
-                                                >
-                                                    <Linkedin className="size-3.5" />
-                                                    <span className="sr-only">LinkedIn</span>
-                                                </Link>
-                                            }
-                                        />
-                                        <TooltipContent>Connect on LinkedIn</TooltipContent>
-                                    </Tooltip>
-                                )}
-                                {experience.links.x && (
-                                    <Tooltip>
-                                        <TooltipTrigger
-                                            render={
-                                                <Link
-                                                    href={experience.links.x}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="hover:text-foreground transition-colors"
-                                                >
-                                                    <FaXTwitter className="size-3.5" />
-                                                    <span className="sr-only">X</span>
-                                                </Link>
-                                            }
-                                        />
-                                        <TooltipContent>Follow on X</TooltipContent>
-                                    </Tooltip>
-                                )}
-                                {experience.links.github && (
-                                    <Tooltip>
-                                        <TooltipTrigger
-                                            render={
-                                                <Link
-                                                    href={experience.links.github}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="hover:text-foreground transition-colors"
-                                                >
-                                                    <Github className="size-3.5" />
-                                                    <span className="sr-only">GitHub</span>
-                                                </Link>
-                                            }
-                                        />
-                                        <TooltipContent>View GitHub</TooltipContent>
-                                    </Tooltip>
-                                )}
-                            </>
+                                );
+                            })}
                         </div>
                     )}
                 </div>

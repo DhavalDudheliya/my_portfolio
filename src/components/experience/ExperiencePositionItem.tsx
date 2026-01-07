@@ -4,7 +4,7 @@ import { ChevronsUpDown, InfinityIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 // import { Tag } from "@/components/ui/tag";
 // import { ProseMono } from "@/components/ui/typography";
-import { cn } from "@/lib/utils";
+import { cn, calculateDuration } from "@/lib/utils";
 
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
 import { ExperiencePosition } from "@/config/Experiences";
@@ -53,7 +53,7 @@ export function ExperiencePositionItem({
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-2 pl-10 text-sm text-muted-foreground">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 pl-10 text-sm text-muted-foreground">
                         {position.employmentType && (
                             <>
                                 <dl>
@@ -62,7 +62,7 @@ export function ExperiencePositionItem({
                                 </dl>
 
                                 <Separator
-                                    className="data-[orientation=vertical]:h-4"
+                                    className="hidden sm:block data-[orientation=vertical]:h-4"
                                     orientation="vertical"
                                 />
                             </>
@@ -70,20 +70,25 @@ export function ExperiencePositionItem({
 
                         <dl>
                             <dt className="sr-only">Employment Period</dt>
-                            <dd className="flex items-center gap-0.5">
-                                <span>{start}</span>
-                                <span className="font-mono">—</span>
-                                {isOngoing ? (
-                                    <>
-                                        <InfinityIcon
-                                            className="size-4.5 translate-y-[0.5px]"
-                                            aria-hidden
-                                        />
-                                        <span className="sr-only">Present</span>
-                                    </>
-                                ) : (
-                                    <span>{end}</span>
-                                )}
+                            <dd className="flex flex-wrap items-center gap-x-2 gap-y-0.5 sm:gap-0.5">
+                                <div className="flex items-center gap-0.5">
+                                    <span>{start}</span>
+                                    <span className="font-mono">—</span>
+                                    {isOngoing ? (
+                                        <>
+                                            <InfinityIcon
+                                                className="size-4.5 translate-y-[0.5px]"
+                                                aria-hidden
+                                            />
+                                            <span className="sr-only">Present</span>
+                                        </>
+                                    ) : (
+                                        <span>{end}</span>
+                                    )}
+                                </div>
+                                <span className="text-xs text-muted-foreground/80 lowercase sm:ml-2">
+                                    ({calculateDuration(start, end)})
+                                </span>
                             </dd>
                         </dl>
                     </div>
