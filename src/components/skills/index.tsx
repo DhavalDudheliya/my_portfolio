@@ -4,12 +4,12 @@ import { SkillCategorySection } from "./SkillCategorySection";
 
 export default function Skills() {
   return (
-    <section className="space-y-8 py-12">
+    <section className="mx-auto space-y-8 px-4 py-12 md:px-0">
       <div className="space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight">
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
           Skills & Technologies
         </h2>
-        <p className="text-muted-foreground text-lg">
+        <p className="text-muted-foreground text-sm md:text-lg">
           Technologies and tools I use to bring ideas to life.
         </p>
       </div>

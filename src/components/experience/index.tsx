@@ -1,20 +1,22 @@
-import React from 'react'
-import Container from '../core/Container'
-import { EXPERIENCES } from '@/config/Experiences'
-import { ExperienceItem } from './ExperienceItem'
+import React from "react";
+
+import { EXPERIENCES } from "@/config/Experiences";
+
+import Container from "../core/Container";
+import { ExperienceItem } from "./ExperienceItem";
 
 const Experiences = () => {
-    return (
-        <Container className='mt-20 mx-auto'>
-            <h2 className='text-3xl font-bold mb-4'>Experiences</h2>
+  return (
+    <Container className="mx-auto mt-20">
+      <h2 className="mb-4 text-2xl font-bold md:text-3xl">Experiences</h2>
 
-            <div>
-                {EXPERIENCES.map((experience) => (
-                    <ExperienceItem key={experience.id} experience={experience} />
-                ))}
-            </div>
-        </Container>
-    )
-}
+      <div>
+        {EXPERIENCES.map((experience) => (
+          <ExperienceItem key={experience.id} experience={experience} />
+        ))}
+      </div>
+    </Container>
+  );
+};
 
-export default Experiences
+export default Experiences;
