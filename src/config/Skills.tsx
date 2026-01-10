@@ -46,7 +46,7 @@ export const SKILLS: SkillCategory[] = [
     technologies: [
       {
         name: "MongoDB",
-        icon: { light: "/svgs/mongodb.svg", dark: "/svgs/mongodb.svg" },
+        icon: { light: "/svgs/mongoDB.svg", dark: "/svgs/mongoDB.svg" },
       },
       {
         name: "PostgreSQL",

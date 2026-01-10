@@ -15,7 +15,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/ui/shadcn/tooltip";
 import { Project } from "@/config/Projects";
 import { getTechnologyIcon } from "@/config/Technologies";
 

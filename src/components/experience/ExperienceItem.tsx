@@ -7,7 +7,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/ui/shadcn/tooltip";
 import { Experience } from "@/config/Experiences";
 import { cn } from "@/lib/utils";
 
