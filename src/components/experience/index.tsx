@@ -3,12 +3,13 @@ import React from "react";
 import { EXPERIENCES } from "@/config/Experiences";
 
 import Container from "../core/Container";
+import PageHeader from "../core/PageHeader";
 import { ExperienceItem } from "./ExperienceItem";
 
 const Experiences = () => {
   return (
     <Container className="mx-auto mt-20">
-      <h2 className="mb-4 text-2xl font-bold md:text-3xl">Experiences</h2>
+      <PageHeader title="Experiences" />
 
       <div>
         {EXPERIENCES.map((experience) => (

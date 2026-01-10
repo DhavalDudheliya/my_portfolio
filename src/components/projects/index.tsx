@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PROJECTS } from "@/config/Projects";
 
+import PageHeader from "../core/PageHeader";
 import { ProjectCard } from "./ProjectCard";
 
 export default function Projects() {
@@ -11,14 +12,10 @@ export default function Projects() {
 
   return (
     <section className="mx-auto space-y-8 px-4 py-20 md:px-0">
-      <div className="space-y-2">
-        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-          Featured Projects
-        </h2>
-        <p className="text-muted-foreground text-sm md:text-lg">
-          Check out some of the projects I&apos;ve worked on.
-        </p>
-      </div>
+      <PageHeader
+        title="Featured Projects"
+        description="Check out some of the projects I've worked on."
+      />
 
       <div className="grid gap-6 pr-0 md:grid-cols-2 md:pr-14 lg:grid-cols-2">
         {featuredProjects.map((project) => (

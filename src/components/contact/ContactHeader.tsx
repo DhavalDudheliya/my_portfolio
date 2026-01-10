@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+
+import PageHeader from "../core/PageHeader";
 
 // Calculate time difference from visitor's timezone to India (IST)
 function getTimezoneOffset(): string {
@@ -40,23 +41,10 @@ export default function ContactHeader() {
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="mb-8"
-    >
-      <div className="flex items-baseline justify-between">
-        <h2 className="text-2xl font-bold md:text-3xl">Contact Me</h2>
-        {timezoneOffset && (
-          <span className="text-muted-foreground text-xs md:text-sm">
-            ( {timezoneOffset} )
-          </span>
-        )}
-      </div>
-      <p className="text-muted-foreground mt-2 text-sm md:text-lg">
-        Get in touch with me. I will get back to you as soon as possible.
-      </p>
-    </motion.div>
+    <PageHeader
+      title="Contact Me"
+      description="Get in touch with me. I will get back to you as soon as possible."
+      endContent={timezoneOffset && <span>( {timezoneOffset} )</span>}
+    />
   );
 }

@@ -8,8 +8,8 @@ import { ThemeToggleButton } from "./ThemeSwitch";
 
 const Navbar = () => {
   return (
-    <Container className="sticky top-0 z-20 rounded-md py-4 backdrop-blur-sm">
-      <div className="flex items-center justify-between px-2 md:px-6">
+    <Container className="sticky top-0 z-20 py-4 backdrop-blur-sm">
+      <div className="flex items-center justify-between px-2 md:px-4">
         <div className="flex items-baseline gap-4">
           <Link href="/">
             <Image
