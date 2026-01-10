@@ -8,7 +8,7 @@ export default function Projects() {
     const featuredProjects = PROJECTS.filter((project) => project.featured);
 
     return (
-        <section className="space-y-8 py-12">
+        <section className="space-y-8 py-20">
             <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tight">Featured Projects</h2>
                 <p className="text-muted-foreground text-lg">
