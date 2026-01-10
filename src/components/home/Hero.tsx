@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,32 +19,74 @@ const Hero = () => {
   return (
     <Container className="mx-auto">
       <div className="flex flex-col items-center gap-6 md:flex-row">
-        <Image
-          className="rounded-lg"
-          src={avatar}
-          alt={name}
-          height={120}
-          width={120}
-        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="relative shrink-0"
+        >
+          <Image
+            className="rounded-lg ring-4 ring-neutral-100 dark:ring-neutral-800"
+            src={avatar}
+            alt={name}
+            height={140}
+            width={140}
+            priority
+          />
+        </motion.div>
+
         <div className="flex flex-col gap-2 text-center md:text-left">
-          <h1 className={cn("text-3xl font-bold", "md:text-5xl lg:text-6xl")}>
+          {/* <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center justify-center gap-2 md:justify-start"
+          >
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+            </span>
+            <span className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
+              Available for projects
+            </span>
+          </motion.div> */}
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className={cn("text-3xl font-bold", "md:text-5xl lg:text-6xl")}
+          >
             {name}
-          </h1>
-          <h1
+          </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className={cn(
               "from-foreground to-foreground/50 bg-linear-to-b bg-clip-text text-xl font-bold text-transparent",
               "md:text-2xl lg:text-3xl",
             )}
           >
             {title}
-          </h1>
+          </motion.h1>
         </div>
       </div>
-      <div className="mt-6 text-center text-sm leading-9 text-neutral-500 md:text-left md:text-lg">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="mt-6 text-center text-sm leading-9 text-neutral-500 md:text-left md:text-lg"
+      >
         {description}
-      </div>
+      </motion.div>
 
-      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2"
+      >
         <Button variant={"default"} size={"lg"} className="w-full">
           <Link
             href="/resume"
@@ -58,13 +103,18 @@ const Hero = () => {
             <SendIcon className="size-5" /> Get in touch
           </Link>
         </Button>
-      </div>
+      </motion.div>
 
-      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2"
+      >
         {socialLinks.map((link) => (
           <SocialLink key={link.name} {...link} />
         ))}
-      </div>
+      </motion.div>
     </Container>
   );
 };

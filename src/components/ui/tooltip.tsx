@@ -4,51 +4,76 @@ import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip";
 
 import { cn } from "@/lib/utils";
 
-const TooltipCreateHandle = TooltipPrimitive.createHandle;
+function TooltipProvider({
+  delay = 0,
+  ...props
+}: TooltipPrimitive.Provider.Props) {
+  return (
+    <TooltipPrimitive.Provider
+      data-slot="tooltip-provider"
+      delay={delay}
+      {...props}
+    />
+  );
+}
 
-const TooltipProvider = TooltipPrimitive.Provider;
+function TooltipRoot(props: TooltipPrimitive.Root.Props) {
+  return <TooltipPrimitive.Root data-slot="tooltip" {...props} />;
+}
 
-const Tooltip = TooltipPrimitive.Root;
+function Tooltip(props: TooltipPrimitive.Root.Props) {
+  return (
+    <TooltipProvider>
+      <TooltipPrimitive.Root data-slot="tooltip" {...props} />
+    </TooltipProvider>
+  );
+}
 
 function TooltipTrigger(props: TooltipPrimitive.Trigger.Props) {
   return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />;
 }
 
-function TooltipPopup({
+function TooltipContent({
   className,
-  align = "center",
-  sideOffset = 4,
   side = "top",
+  sideOffset = 8,
+  align = "center",
+  alignOffset = 0,
   children,
   ...props
-}: TooltipPrimitive.Popup.Props & {
-  align?: TooltipPrimitive.Positioner.Props["align"];
-  side?: TooltipPrimitive.Positioner.Props["side"];
-  sideOffset?: TooltipPrimitive.Positioner.Props["sideOffset"];
-}) {
+}: TooltipPrimitive.Popup.Props &
+  Pick<
+    TooltipPrimitive.Positioner.Props,
+    "align" | "alignOffset" | "side" | "sideOffset"
+  >) {
   return (
     <TooltipPrimitive.Portal>
       <TooltipPrimitive.Positioner
         align={align}
-        className="z-50 h-(--positioner-height) w-(--positioner-width) max-w-(--available-width) transition-[top,left,right,bottom,transform] data-instant:transition-none"
-        data-slot="tooltip-positioner"
+        alignOffset={alignOffset}
         side={side}
         sideOffset={sideOffset}
+        className="isolate z-50"
       >
         <TooltipPrimitive.Popup
+          data-slot="tooltip-content"
           className={cn(
-            "bg-popover text-popover-foreground relative flex h-(--popup-height,auto) w-(--popup-width,auto) origin-(--transform-origin) rounded-md border bg-clip-padding text-xs text-balance shadow-md shadow-black/5 transition-[width,height,scale,opacity] before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-md)-1px)] before:shadow-[0_1px_--theme(--color-black/4%)] data-ending-style:scale-98 data-ending-style:opacity-0 data-instant:duration-0 data-starting-style:scale-98 data-starting-style:opacity-0 dark:bg-clip-border dark:before:shadow-[0_-1px_--theme(--color-white/8%)]",
+            "bg-foreground text-background z-50 w-fit max-w-xs origin-(--transform-origin)",
+            "data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=delayed-open]:animate-in data-[state=delayed-open]:fade-in-0 data-[state=delayed-open]:zoom-in-95 rounded-lg px-4 py-2 text-sm",
+            "data-instant:duration-0",
+            "selection:bg-background selection:text-foreground",
             className,
           )}
-          data-slot="tooltip-popup"
           {...props}
         >
-          <TooltipPrimitive.Viewport
-            className="relative size-full overflow-clip px-(--viewport-inline-padding) py-1 [--viewport-inline-padding:--spacing(2)] **:data-current:w-[calc(var(--popup-width)-2*var(--viewport-inline-padding)-2px)] **:data-current:opacity-100 **:data-current:transition-opacity **:data-current:data-ending-style:opacity-0 data-instant:transition-none **:data-previous:w-[calc(var(--popup-width)-2*var(--viewport-inline-padding)-2px)] **:data-previous:truncate **:data-previous:opacity-100 **:data-previous:transition-opacity **:data-previous:data-ending-style:opacity-0 **:data-current:data-starting-style:opacity-0 **:data-previous:data-starting-style:opacity-0"
-            data-slot="tooltip-viewport"
-          >
-            {children}
-          </TooltipPrimitive.Viewport>
+          {children}
+          <TooltipPrimitive.Arrow
+            className={cn(
+              "bg-foreground fill-foreground data-[side=bottom]:top-1 data-[side=left]:top-1/2! data-[side=left]:-right-1 data-[side=left]:-translate-y-1/2 data-[side=right]:top-1/2! data-[side=right]:-left-1 data-[side=right]:-translate-y-1/2 data-[side=top]:-bottom-2.5",
+              "size-2.5 translate-y-[calc(-50%-2px)] rotate-45 rounded-xs",
+              "data-[side=bottom]:rounded-br-sm data-[side=top]:rounded-tl-sm",
+            )}
+          />
         </TooltipPrimitive.Popup>
       </TooltipPrimitive.Positioner>
     </TooltipPrimitive.Portal>
@@ -57,9 +82,8 @@ function TooltipPopup({
 
 export {
   Tooltip,
-  TooltipPopup as TooltipContent,
-  TooltipCreateHandle,
-  TooltipPopup,
+  TooltipContent,
   TooltipProvider,
+  TooltipRoot,
   TooltipTrigger,
 };
