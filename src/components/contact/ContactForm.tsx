@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "motion/react";
 import { FormEvent, useState } from "react";
 
+import { FadeInView } from "../core/FadeInView";
 import { Button } from "../ui/button";
 import { Field, FieldError, FieldLabel } from "../ui/field";
 import { Input } from "../ui/input";
@@ -57,11 +57,7 @@ export default function ContactForm() {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-    >
+    <FadeInView delay={0.2}>
       <h3 className="mb-6 text-xl font-semibold">Send me a message</h3>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -129,6 +125,6 @@ export default function ContactForm() {
           {isSubmitting ? "Sending..." : "Send Message"}
         </Button>
       </form>
-    </motion.div>
+    </FadeInView>
   );
 }

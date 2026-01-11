@@ -1,12 +1,12 @@
 "use client";
 
 import { Check, Copy } from "lucide-react";
-import { motion } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
 
 import { contactConfig } from "@/config/Contact";
 
+import { FadeInView } from "../core/FadeInView";
 import Mail from "../svgs/Mail";
 import Phone from "../svgs/Phone";
 import { toastManager } from "../ui/toast";
@@ -52,10 +52,8 @@ function CopyButton({ text, icon }: { text: string; icon: React.ReactNode }) {
 
 export default function ContactMethods() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 }}
+    <FadeInView
+      delay={0.1}
       className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-3"
     >
       {/* Email Me */}
@@ -88,6 +86,6 @@ export default function ContactMethods() {
           ))}
         </div>
       </div>
-    </motion.div>
+    </FadeInView>
   );
 }

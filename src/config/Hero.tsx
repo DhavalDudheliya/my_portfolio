@@ -42,14 +42,30 @@ export const heroConfig = {
   // Description
   description: (
     <>
-      I build <strong>pixel-perfect</strong>, <strong>user-friendly</strong> web
-      applications and develop <strong>reliable backend</strong> using{" "}
-      <SkillBadge className="align-middle px-2 py-1">TypeScript</SkillBadge>,{" "}
-      <SkillBadge className="align-middle px-2 py-1">React</SkillBadge>,{" "}
-      <SkillBadge className="align-middle px-2 py-1">Next.js</SkillBadge>,{" "}
-      <SkillBadge className="align-middle px-2 py-1">Node.js</SkillBadge> and{" "}
-      <SkillBadge className="align-middle px-2 py-1">MongoDB</SkillBadge>, with a strong
-      focus on performance, scalability, and clean UX.
+      I build <strong className="text-primary/80">pixel-perfect</strong>,{" "}
+      <strong className="text-primary/80">user-friendly</strong> web
+      applications and develop{" "}
+      <strong className="text-primary/80">reliable backend</strong> using{" "}
+      <SkillBadge className="text-primary/80 px-2 py-1 align-middle">
+        TypeScript
+      </SkillBadge>
+      ,{" "}
+      <SkillBadge className="text-primary/80 px-2 py-1 align-middle">
+        React
+      </SkillBadge>
+      ,{" "}
+      <SkillBadge className="text-primary/80 px-2 py-1 align-middle">
+        Next.js
+      </SkillBadge>
+      ,{" "}
+      <SkillBadge className="text-primary/80 px-2 py-1 align-middle">
+        Node.js
+      </SkillBadge>{" "}
+      and{" "}
+      <SkillBadge className="text-primary/80 px-2 py-1 align-middle">
+        MongoDB
+      </SkillBadge>
+      , with a strong focus on performance, scalability, and clean UX.
     </>
   ),
 };

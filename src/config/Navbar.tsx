@@ -14,6 +14,6 @@ export const navItems: NavItem[] = [
   },
   {
     label: "Blogs",
-    href: "/blogs",
+    href: "/blog",
   },
 ];

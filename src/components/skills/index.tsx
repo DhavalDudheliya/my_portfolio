@@ -1,5 +1,6 @@
 import { SKILLS } from "@/config/Skills";
 
+import { FadeInView } from "../core/FadeInView";
 import PageHeader from "../core/PageHeader";
 import { SkillCategorySection } from "./SkillCategorySection";
 
@@ -11,8 +12,10 @@ export default function Skills() {
         description="Technologies and tools I use to bring ideas to life."
       />
       <div className="grid gap-6 md:grid-cols-2 md:gap-8">
-        {SKILLS.map((category) => (
-          <SkillCategorySection key={category.category} category={category} />
+        {SKILLS.map((category, index) => (
+          <FadeInView key={category.category} delay={index * 0.1}>
+            <SkillCategorySection category={category} />
+          </FadeInView>
         ))}
       </div>
     </section>

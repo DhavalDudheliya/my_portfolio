@@ -1,4 +1,5 @@
 import AboutMe from "@/components/about";
+import { FeaturedBlogs } from "@/components/blog";
 import Contact from "@/components/contact";
 import Container from "@/components/core/Container";
 import Experiences from "@/components/experience";
@@ -17,6 +18,7 @@ export default function Home() {
       <Skills />
       <GitHubContributions />
       <Contact />
+      <FeaturedBlogs />
     </Container>
   );
 }
