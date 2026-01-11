@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 import CV from "@/components/svgs/CV";
 import SendIcon from "@/components/svgs/SendIcon";

@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 import { BlogCard } from "@/components/blog";
 import { FadeInView } from "@/components/core/FadeInView";

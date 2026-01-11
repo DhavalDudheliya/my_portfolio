@@ -11,7 +11,7 @@ import {
   Mail,
   User,
 } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useTransitionRouter } from "next-view-transitions";
 import * as React from "react";
 
 import {
@@ -44,7 +44,7 @@ interface CommandAction {
 }
 
 export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
-  const router = useRouter();
+  const router = useTransitionRouter();
   const { toggleTheme } = useThemeToggle();
   const [search, setSearch] = React.useState("");
 
