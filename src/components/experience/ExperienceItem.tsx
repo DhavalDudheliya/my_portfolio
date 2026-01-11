@@ -1,16 +1,10 @@
-import { Github, Globe, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaXTwitter } from "react-icons/fa6";
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/shadcn/tooltip";
 import { Experience } from "@/config/Experiences";
 import { cn } from "@/lib/utils";
 
+import { CompanyLinks } from "./CompanyLinks";
 import { ExperiencePositionItem } from "./ExperiencePositionItem";
 
 export function ExperienceItem({ experience }: { experience: Experience }) {
@@ -91,59 +85,7 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
             )}
           </div>
 
-          {experience.links && (
-            <div className="text-muted-foreground flex items-center gap-2">
-              {[
-                {
-                  key: "website",
-                  url: experience.links.website,
-                  icon: Globe,
-                  label: "Website",
-                  tooltip: "Visit Website",
-                },
-                {
-                  key: "linkedin",
-                  url: experience.links.linkedin,
-                  icon: Linkedin,
-                  label: "LinkedIn",
-                  tooltip: "Connect on LinkedIn",
-                },
-                {
-                  key: "x",
-                  url: experience.links.x,
-                  icon: FaXTwitter,
-                  label: "X",
-                  tooltip: "Follow on X",
-                },
-                {
-                  key: "github",
-                  url: experience.links.github,
-                  icon: Github,
-                  label: "GitHub",
-                  tooltip: "View GitHub",
-                },
-              ].map((link) => {
-                if (!link.url) return null;
-                const Icon = link.icon;
-                return (
-                  <Tooltip key={link.key}>
-                    <TooltipTrigger asChild>
-                      <Link
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-foreground transition-colors"
-                      >
-                        <Icon className="size-3.5" />
-                        <span className="sr-only">{link.label}</span>
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent>{link.tooltip}</TooltipContent>
-                  </Tooltip>
-                );
-              })}
-            </div>
-          )}
+          {experience.links && <CompanyLinks links={experience.links} />}
         </div>
       </div>
       <div className="before:bg-border relative ml-3 space-y-4 before:absolute before:left-3 before:h-full before:w-px md:ml-13">

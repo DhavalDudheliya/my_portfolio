@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Globe } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,13 +11,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/shadcn/tooltip";
 import { Project } from "@/config/Projects";
-import { getTechnologyIcon } from "@/config/Technologies";
+
+import { ProjectLinks } from "./ProjectLinks";
+import { TechStack } from "./TechStack";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -49,81 +46,11 @@ export function ProjectCard({ project }: { project: Project }) {
           <p className="text-muted-foreground text-[10px] font-bold tracking-wider uppercase">
             Technologies
           </p>
-          <div className="flex items-center">
-            {project.technologies.map((tech) => {
-              const Icon = getTechnologyIcon(tech);
-              return (
-                <div
-                  key={tech}
-                  className="group/icon bg-secondary relative ml-[-8px] flex items-center justify-center rounded-full border p-1.5 shadow-sm transition-all duration-300 ease-in-out first:ml-0 hover:z-10 hover:pr-3"
-                >
-                  <div className="size-5 shrink-0">
-                    {Icon ? (
-                      <Icon />
-                    ) : (
-                      <span className="text-[10px]">{tech.slice(0, 2)}</span>
-                    )}
-                  </div>
-                  <span className="text-secondary-foreground max-w-0 overflow-hidden text-[10px] font-medium whitespace-nowrap opacity-0 transition-all duration-300 ease-in-out group-hover/icon:ml-2 group-hover/icon:max-w-[100px] group-hover/icon:opacity-100">
-                    {tech}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
+          <TechStack technologies={project.technologies} />
         </div>
       </CardContent>
       <CardFooter className="flex justify-between border-t pt-2!">
-        <div className="flex gap-2">
-          {project.links?.github && (
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <span>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="size-8"
-                    render={
-                      <Link
-                        href={project.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      />
-                    }
-                  >
-                    <Github className="size-4" />
-                    <span className="sr-only">GitHub</span>
-                  </Button>
-                </span>
-              </TooltipTrigger>
-              <TooltipContent>View Code</TooltipContent>
-            </Tooltip>
-          )}
-          {project.links?.live && (
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <span>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="size-8"
-                    render={
-                      <Link
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      />
-                    }
-                  >
-                    <Globe className="size-4" />
-                    <span className="sr-only">Live Demo</span>
-                  </Button>
-                </span>
-              </TooltipTrigger>
-              <TooltipContent>View Live Site</TooltipContent>
-            </Tooltip>
-          )}
-        </div>
+        {project.links && <ProjectLinks links={project.links} />}
         <Button
           variant="ghost"
           className="group text-xs!"
