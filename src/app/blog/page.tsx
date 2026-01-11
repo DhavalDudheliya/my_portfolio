@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { BlogCard } from "@/components/blog";
+import { FadeInView } from "@/components/core/FadeInView";
 import PageHeader from "@/components/core/PageHeader";
 import { getAllPosts } from "@/lib/blog";
 
@@ -23,8 +24,10 @@ export default function BlogPage() {
       {/* Blog Posts List */}
       {posts.length > 0 ? (
         <div className="space-y-0">
-          {posts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
+          {posts.map((post, index) => (
+            <FadeInView key={post.slug} delay={index * 0.1}>
+              <BlogCard post={post} />
+            </FadeInView>
           ))}
         </div>
       ) : (

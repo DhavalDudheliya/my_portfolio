@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PROJECTS } from "@/config/Projects";
 
+import { FadeInView } from "../core/FadeInView";
 import PageHeader from "../core/PageHeader";
 import { ProjectCard } from "./ProjectCard";
 
@@ -11,15 +12,17 @@ export default function Projects() {
   const featuredProjects = PROJECTS.filter((project) => project.featured);
 
   return (
-    <section className="mx-auto space-y-8 px-4 py-20 md:px-0">
+    <section className="mx-auto space-y-8 px-4 py-12 md:px-0">
       <PageHeader
         title="Featured Projects"
         description="Check out some of the projects I've worked on."
       />
 
       <div className="grid gap-6 pr-0 md:grid-cols-2 md:pr-14 lg:grid-cols-2">
-        {featuredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {featuredProjects.map((project, index) => (
+          <FadeInView key={project.id} delay={index * 0.1}>
+            <ProjectCard project={project} />
+          </FadeInView>
         ))}
       </div>
 

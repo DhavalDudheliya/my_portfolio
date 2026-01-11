@@ -1,19 +1,20 @@
-import React from "react";
-
 import { EXPERIENCES } from "@/config/Experiences";
 
 import Container from "../core/Container";
+import { FadeInView } from "../core/FadeInView";
 import PageHeader from "../core/PageHeader";
 import { ExperienceItem } from "./ExperienceItem";
 
 const Experiences = () => {
   return (
-    <Container className="mx-auto mt-20">
+    <Container className="mx-auto py-12">
       <PageHeader title="Experiences" />
 
       <div>
-        {EXPERIENCES.map((experience) => (
-          <ExperienceItem key={experience.id} experience={experience} />
+        {EXPERIENCES.map((experience, index) => (
+          <FadeInView key={experience.id} delay={index * 0.1}>
+            <ExperienceItem experience={experience} />
+          </FadeInView>
         ))}
       </div>
     </Container>

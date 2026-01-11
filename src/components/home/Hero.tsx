@@ -17,7 +17,7 @@ const Hero = () => {
   const { name, title, avatar, description } = heroConfig;
 
   return (
-    <Container className="mx-auto">
+    <Container className="mx-auto pb-12">
       <div className="flex flex-col items-center gap-6 md:flex-row">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}

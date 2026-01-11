@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { FadeInView } from "@/components/core/FadeInView";
 import { Badge } from "@/components/ui/badge";
 import { type Project, PROJECTS } from "@/config/Projects";
 import { cn } from "@/lib/utils";
@@ -46,8 +47,10 @@ export function ProjectsList() {
 
       {/* Projects Grid */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-        {filteredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {filteredProjects.map((project, index) => (
+          <FadeInView key={project.id} delay={index * 0.1}>
+            <ProjectCard project={project} />
+          </FadeInView>
         ))}
       </div>
 

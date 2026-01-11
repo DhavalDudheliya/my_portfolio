@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 import { BlogCard } from "@/components/blog";
+import { FadeInView } from "@/components/core/FadeInView";
 import PageHeader from "@/components/core/PageHeader";
 import { Button } from "@/components/ui/button";
 import { getAllPosts } from "@/lib/blog";
@@ -22,8 +23,10 @@ export default function FeaturedBlogs() {
       />
 
       <div className="space-y-0">
-        {featuredPosts.map((post) => (
-          <BlogCard key={post.slug} post={post} />
+        {featuredPosts.map((post, index) => (
+          <FadeInView key={post.slug} delay={index * 0.1}>
+            <BlogCard post={post} />
+          </FadeInView>
         ))}
       </div>
 
