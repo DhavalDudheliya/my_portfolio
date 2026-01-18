@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import { SkillBadge } from "@/components/experience/SkillBadge";
 
 interface ProjectTechnologiesProps {
   technologies: string[];
@@ -10,13 +10,13 @@ export function ProjectTechnologies({
   return (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Technologies</h3>
-      <div className="flex flex-wrap gap-2">
+      <ul className="flex flex-wrap gap-1.5">
         {technologies.map((tech) => (
-          <Badge key={tech} variant="secondary" className="px-3 py-1 text-sm">
-            {tech}
-          </Badge>
+          <li key={tech} className="flex">
+            <SkillBadge>{tech}</SkillBadge>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
