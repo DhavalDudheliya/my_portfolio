@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 import { Badge } from "@/components/ui/badge";
 import type { BlogPost } from "@/lib/blog";

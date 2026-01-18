@@ -26,29 +26,30 @@ export function ProjectsList() {
       {/* Filter Badges */}
       <div className="flex flex-wrap gap-2">
         {FILTER_OPTIONS.map((status) => (
-          <Badge
-            key={status}
-            variant={activeFilter === status ? "default" : "outline"}
-            className={cn(
-              "cursor-pointer px-3 py-2.5 text-sm transition-all select-none",
-              activeFilter === status ? "shadow-sm" : "hover:bg-accent/50",
-            )}
-            onClick={() => setActiveFilter(status)}
-          >
-            {status}
-            {status !== "All" && (
-              <span className="ml-1.5 text-xs opacity-70">
-                ({PROJECTS.filter((p) => p.status === status).length})
-              </span>
-            )}
-          </Badge>
+          <FadeInView key={status}>
+            <Badge
+              variant={activeFilter === status ? "default" : "outline"}
+              className={cn(
+                "cursor-pointer px-3 py-2.5 text-sm transition-all select-none",
+                activeFilter === status ? "shadow-sm" : "hover:bg-accent/50",
+              )}
+              onClick={() => setActiveFilter(status)}
+            >
+              {status}
+              {status !== "All" && (
+                <span className="ml-1.5 text-xs opacity-70">
+                  ({PROJECTS.filter((p) => p.status === status).length})
+                </span>
+              )}
+            </Badge>
+          </FadeInView>
         ))}
       </div>
 
       {/* Projects Grid */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-        {filteredProjects.map((project, index) => (
-          <FadeInView key={project.id} delay={index * 0.1}>
+        {filteredProjects.map((project) => (
+          <FadeInView key={project.id}>
             <ProjectCard project={project} />
           </FadeInView>
         ))}

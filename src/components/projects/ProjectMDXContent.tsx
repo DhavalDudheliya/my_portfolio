@@ -4,7 +4,7 @@ import rehypeSlug from "rehype-slug";
 
 import { BlogMDXComponents } from "@/components/blog/MDXComponents";
 
-interface MDXContentProps {
+interface ProjectMDXContentProps {
   source: string;
 }
 
@@ -14,7 +14,7 @@ const rehypePrettyCodeOptions = {
   defaultLang: "typescript",
 };
 
-export function MDXContent({ source }: MDXContentProps) {
+export function ProjectMDXContent({ source }: ProjectMDXContentProps) {
   return (
     <div className="prose prose-neutral dark:prose-invert max-w-none">
       <MDXRemote

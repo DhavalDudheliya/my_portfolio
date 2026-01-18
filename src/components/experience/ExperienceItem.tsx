@@ -1,3 +1,4 @@
+import { Building2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -35,7 +36,7 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
                   width={40}
                   height={40}
                   quality={100}
-                  className="rounded-full transition-opacity hover:opacity-80"
+                  className="rounded-full border border-zinc-200 transition-opacity hover:opacity-80 dark:border-zinc-800"
                   unoptimized
                   aria-hidden
                 />
@@ -47,13 +48,15 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
                 width={40}
                 height={40}
                 quality={100}
-                className="rounded-full"
+                className="rounded-full border border-zinc-200 dark:border-zinc-800"
                 unoptimized
                 aria-hidden
               />
             )
           ) : (
-            <span className="flex size-10 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+            <div className="flex size-10 items-center justify-center rounded-full bg-zinc-300 dark:bg-zinc-600">
+              <Building2 className="size-6" />
+            </div>
           )}
         </div>
 

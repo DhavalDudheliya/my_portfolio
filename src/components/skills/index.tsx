@@ -6,7 +6,7 @@ import { SkillCategorySection } from "./SkillCategorySection";
 
 export default function Skills() {
   return (
-    <section className="mx-auto space-y-8 px-4 py-12 md:px-0">
+    <section id="skills" className="mx-auto space-y-8 px-4 py-12 md:px-0">
       <PageHeader
         title="Skills & Technologies"
         description="Technologies and tools I use to bring ideas to life."
