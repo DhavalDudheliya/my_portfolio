@@ -2,79 +2,74 @@ import { Github, Globe } from "lucide-react";
 import { IconType } from "react-icons";
 
 export type ProjectLink = {
-    url: string;
-    icon?: React.ElementType | IconType;
-    label: string;
+  url: string;
+  icon?: React.ElementType | IconType;
+  label: string;
 };
 
 export type Project = {
-    id: string;
-    title: string;
-    slug: string;
-    description: string;
-    thumbnail: string;
-    technologies: string[];
-    status: "Completed" | "In Progress";
-    links?: {
-        live?: string;
-        github?: string;
-    };
-    featured: boolean;
+  id: string;
+  title: string;
+  slug: string;
+  description: string;
+  thumbnail: string;
+  technologies: string[];
+  status: "Completed" | "In Progress";
+  links?: {
+    live?: string;
+    github?: string;
+  };
+  featured: boolean;
 };
 
 export const PROJECTS: Project[] = [
-    {
-        id: "1",
-        title: "Project One",
-        slug: "project-one",
-        description: "Lorem ipsum dolor sit amet consectetur adipiscing elit justo fringilla ultrices sem iaculis molestie pharetra.",
-        thumbnail: "/assets/project-placeholder.png", // specific placeholder or a general one
-        technologies: ["React", "Next.js", "TailwindCSS", "TypeScript"],
-        status: "Completed",
-        links: {
-            live: "https://example.com",
-            github: "https://github.com/example/project-one",
-        },
-        featured: true,
+  {
+    id: "1",
+    title: "Hostel Management System",
+    slug: "hostel-management-system",
+    description:
+      "A user-centric platform designed using MERN Stack for hostel authorities to efficiently manage operations, reducing reliance on Excel by 75%.",
+    thumbnail: "/projects/p1.png",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    status: "Completed",
+    links: {
+      github: "https://github.com/DhavalDudheliya/Hostel_Management",
     },
-    {
-        id: "2",
-        title: "Project Two",
-        slug: "project-two",
-        description: "Lorem ipsum dolor sit amet consectetur adipiscing elit justo fringilla ultrices sem iaculis molestie pharetra.",
-        thumbnail: "/assets/project-placeholder.png",
-        technologies: ["Node.js", "Express", "MongoDB"],
-        status: "In Progress",
-        links: {
-            github: "https://github.com/example/project-two",
-        },
-        featured: true,
+    featured: true,
+  },
+  {
+    id: "2",
+    title: "Lost and Found Helper System",
+    slug: "lost-and-found-helper-system",
+    description:
+      "A platform designed to help students retrieve lost items efficiently. This system streamlines the process of managing lost and found items, significantly reducing the need for physical office visits.",
+    thumbnail: "/projects/p2.png",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    status: "Completed",
+    links: {
+      github: "https://github.com/DhavalDudheliya/LoastAndFound",
     },
-    {
-        id: "3",
-        title: "Project Three",
-        slug: "project-three",
-        description: "Lorem ipsum dolor sit amet consectetur adipiscing elit justo fringilla ultrices sem iaculis molestie pharetra.",
-        thumbnail: "/assets/project-placeholder.png",
-        technologies: ["React", "TypeScript", "PostgreSQL"],
-        status: "Completed",
-        links: {
-            live: "https://example.com",
-        },
-        featured: true,
+    featured: true,
+  },
+  {
+    id: "3",
+    title: "Duolingo Clone",
+    slug: "duolingo-clone",
+    description:
+      "A Duolingo-inspired language learning website built with Next.js, featuring AI-generated voices, Clerk authentication, Stripe payments, PostgreSQL, and Drizzle ORM. Includes admin dashboard, units, lessons, points, hearts, quests, leaderboards, and a shop.",
+    thumbnail: "/projects/p3.png",
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "Clerk",
+      "Drizzle",
+      "PostgreSQL",
+      "Stripe",
+    ],
+    status: "Completed",
+    links: {
+      github: "https://github.com/DhavalDudheliya/DuoLingo_Clone",
     },
-    {
-        id: "4",
-        title: "Project Four",
-        slug: "project-four",
-        description: "Lorem ipsum dolor sit amet consectetur adipiscing elit justo fringilla ultrices sem iaculis molestie pharetra.",
-        thumbnail: "/assets/project-placeholder.png",
-        technologies: ["Next.js", "React", "TailwindCSS"],
-        status: "In Progress",
-        links: {
-            live: "https://example.com",
-            github: "https://github.com/example/project-four",
-        },
-        featured: false,
-    },
+    featured: true,
+  },
 ];

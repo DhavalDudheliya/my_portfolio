@@ -54,10 +54,13 @@ export default async function ProjectPage({ params }: PageProps) {
         <BackToProjects />
       </FadeInView>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div>
         <div className="space-y-6">
           <FadeInView>
             <ProjectHeader project={project} />
+          </FadeInView>
+          <FadeInView>
+            <ProjectImage src={project.thumbnail} alt={project.title} />
           </FadeInView>
           <FadeInView>
             <ProjectTechnologies technologies={project.technologies} />
@@ -66,10 +69,6 @@ export default async function ProjectPage({ params }: PageProps) {
             <ProjectActions links={project.links} />
           </FadeInView>
         </div>
-
-        <FadeInView>
-          <ProjectImage src={project.thumbnail} alt={project.title} />
-        </FadeInView>
       </div>
 
       {projectContent && (
