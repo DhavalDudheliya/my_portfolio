@@ -1,4 +1,5 @@
 import Container from "@/components/core/Container";
+import { FadeInView } from "@/components/core/FadeInView";
 import { BackToProjects } from "@/components/projects/BackToProjects";
 import { ProjectActions } from "@/components/projects/ProjectActions";
 import { ProjectHeader } from "@/components/projects/ProjectHeader";
@@ -49,22 +50,32 @@ export default async function ProjectPage({ params }: PageProps) {
 
   return (
     <Container className="min-h-screen space-y-8 py-12">
-      <BackToProjects />
+      <FadeInView>
+        <BackToProjects />
+      </FadeInView>
 
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="space-y-6">
-          <ProjectHeader project={project} />
-          <ProjectTechnologies technologies={project.technologies} />
-          <ProjectActions links={project.links} />
+          <FadeInView>
+            <ProjectHeader project={project} />
+          </FadeInView>
+          <FadeInView>
+            <ProjectTechnologies technologies={project.technologies} />
+          </FadeInView>
+          <FadeInView>
+            <ProjectActions links={project.links} />
+          </FadeInView>
         </div>
 
-        <ProjectImage src={project.thumbnail} alt={project.title} />
+        <FadeInView>
+          <ProjectImage src={project.thumbnail} alt={project.title} />
+        </FadeInView>
       </div>
 
       {projectContent && (
-        <div className="">
+        <FadeInView>
           <ProjectMDXContent source={projectContent} />
-        </div>
+        </FadeInView>
       )}
     </Container>
   );
