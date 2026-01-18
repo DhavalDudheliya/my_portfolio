@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Users, ClipboardList, Layers } from "lucide-react";
 import { SiFigma } from "react-icons/si";
 
 import { cn } from "@/lib/utils";
@@ -144,6 +145,31 @@ const SKILL_ICONS: Record<string, SkillIconType> = {
   "REST APIs": {
     type: "component",
     component: <span className="text-zinc-500">API</span>,
+  },
+  "Better Auth": {
+    type: "svg",
+    src: "/svgs/better-auth_light.svg",
+    darkSrc: "/svgs/better-auth_dark.svg",
+  },
+  Razorpay: {
+    type: "svg",
+    src: "/svgs/razorpay.svg",
+  },
+  Strapi: {
+    type: "svg",
+    src: "/svgs/strapi.svg",
+  },
+  "Team Leadership": {
+    type: "component",
+    component: <Users className="size-3.5 text-blue-500" />,
+  },
+  "Project Management": {
+    type: "component",
+    component: <ClipboardList className="size-3.5 text-emerald-500" />,
+  },
+  "Technical Architecture": {
+    type: "component",
+    component: <Layers className="size-3.5 text-purple-500" />,
   },
 };
 
