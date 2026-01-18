@@ -42,10 +42,10 @@ export const heroConfig = {
   // Description
   description: (
     <>
-      I build <strong className="text-primary/80">pixel-perfect</strong>,{" "}
-      <strong className="text-primary/80">user-friendly</strong> web
-      applications and develop{" "}
-      <strong className="text-primary/80">reliable backend</strong> using{" "}
+      I build <strong className="text-primary/80">polished</strong>,{" "}
+      <strong className="text-primary/80">detail-driven</strong>, and{" "}
+      <strong className="text-primary/80">scalable</strong> full-stack web
+      applications using{" "}
       <SkillBadge className="text-primary/80 px-2 py-1 align-middle">
         TypeScript
       </SkillBadge>
