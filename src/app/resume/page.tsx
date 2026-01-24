@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -6,6 +7,9 @@ import { FadeInView } from "@/components/core/FadeInView";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { resumeConfig } from "@/config/Resume";
+import { generatePageMetadata } from "@/config/seo.config";
+
+export const metadata: Metadata = generatePageMetadata("resume");
 
 export default function ResumePage() {
   return (
