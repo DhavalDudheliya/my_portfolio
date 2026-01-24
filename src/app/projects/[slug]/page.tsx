@@ -29,6 +29,17 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: `${project.title} | Projects`,
     description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      type: "article",
+      images: project.thumbnail ? [project.thumbnail] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+    },
   };
 }
 

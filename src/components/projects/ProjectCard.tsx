@@ -30,14 +30,13 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.status}
         </Badge>
       </CardHeader>
-      <div className="bg-muted relative h-48 w-full overflow-hidden">
-        <Image
-          src={project.thumbnail}
-          alt={project.title}
-          fill
-          className="object-cover transition-transform duration-300 hover:scale-105"
-        />
-      </div>
+      <Image
+        src={project.thumbnail}
+        alt={project.title}
+        width={1920}
+        height={1080}
+        className="object-cover transition-transform duration-300 hover:scale-105"
+      />
       <CardContent className="flex-1 space-y-4 px-6 py-4">
         <p className="text-muted-foreground line-clamp-3 text-sm">
           {project.description}

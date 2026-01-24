@@ -3,13 +3,10 @@ import type { Metadata } from "next";
 import { BlogCard } from "@/components/blog";
 import { FadeInView } from "@/components/core/FadeInView";
 import PageHeader from "@/components/core/PageHeader";
+import { generatePageMetadata } from "@/config/seo.config";
 import { getAllPosts } from "@/lib/blog";
 
-export const metadata: Metadata = {
-  title: "Blog | Dhaval's Portfolio",
-  description:
-    "Thoughts, tutorials, and insights about web development, React, and software engineering.",
-};
+export const metadata: Metadata = generatePageMetadata("blog");
 
 export default function BlogPage() {
   const posts = getAllPosts();
@@ -18,7 +15,7 @@ export default function BlogPage() {
     <section className="mx-auto max-w-4xl space-y-8 px-4 py-20 md:px-0">
       <PageHeader
         title="All Blogs"
-        description="Sharing my thoughts on web development, React patterns, and software engineering best practices."
+        description="Sharing my thoughts and tutorials on web development and software engineering"
       />
 
       {/* Blog Posts List */}

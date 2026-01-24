@@ -1,11 +1,11 @@
+import type { Metadata } from "next";
+
 import Container from "@/components/core/Container";
 import PageHeader from "@/components/core/PageHeader";
 import { ProjectsList } from "@/components/projects/ProjectsList";
+import { generatePageMetadata } from "@/config/seo.config";
 
-export const metadata = {
-  title: "Projects | Dhaval Dudheliya",
-  description: "A showcase of my projects and work.",
-};
+export const metadata: Metadata = generatePageMetadata("projects");
 
 export default function ProjectsPage() {
   return (
