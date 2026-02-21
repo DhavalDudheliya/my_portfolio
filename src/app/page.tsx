@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import AboutMe from "@/components/about";
 import { FeaturedBlogs } from "@/components/blog";
+import { BooksSection } from "@/components/books";
 import Contact from "@/components/contact";
 import Container from "@/components/core/Container";
 import Experiences from "@/components/experience";
@@ -24,7 +25,7 @@ export default function Home() {
         description={seoConfig.siteDescription}
         sameAs={[...seoConfig.socialLinks]}
       />
-      <Container className="min-h-screen px-2 py-12 md:px-0">
+      <Container className="min-h-screen px-0 py-12 md:px-2">
         <Hero />
         <Experiences />
         <Projects />
@@ -33,6 +34,7 @@ export default function Home() {
         <GitHubContributions />
         <Contact />
         <FeaturedBlogs />
+        <BooksSection />
       </Container>
     </>
   );

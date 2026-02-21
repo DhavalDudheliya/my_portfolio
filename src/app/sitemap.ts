@@ -3,6 +3,7 @@ import { MetadataRoute } from "next";
 import { PROJECTS } from "@/config/Projects";
 import { seoConfig } from "@/config/seo.config";
 import { getAllPosts } from "@/lib/blog";
+import { getAllBooks } from "@/lib/books";
 
 const BASE_URL = seoConfig.baseUrl;
 
@@ -23,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/books`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
@@ -52,5 +59,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPages, ...projectPages];
+  // Dynamic book pages
+  const books = getAllBooks();
+  const bookPages: MetadataRoute.Sitemap = books.map((book) => ({
+    url: `${BASE_URL}/books/${book.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...blogPages, ...projectPages, ...bookPages];
 }

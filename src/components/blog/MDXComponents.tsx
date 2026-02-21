@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 import { Callout } from "./Callout";
 import { CodeBlock } from "./CodeBlock";
+import { Quote } from "@/components/ui/Quote";
 
 // MDX components type definition
 type MDXComponents = {
@@ -237,6 +238,7 @@ export const BlogMDXComponents: MDXComponents = {
 
   // Custom components
   Callout,
+  Quote,
   Image: ({ alt, ...restProps }: ImageProps) => (
     <span className="my-6 block overflow-hidden rounded-lg">
       <Image

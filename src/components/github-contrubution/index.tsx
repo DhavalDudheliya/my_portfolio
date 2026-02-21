@@ -12,7 +12,7 @@ export async function GitHubContributions() {
     <>
       <section
         id="contributions"
-        className="mx-auto space-y-8 px-2 py-12 md:px-0"
+        className="mx-auto space-y-8 px-2 py-12 md:px-4"
       >
         <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
           GitHub Contributions

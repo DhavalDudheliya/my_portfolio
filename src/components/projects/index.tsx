@@ -12,7 +12,7 @@ export default function Projects() {
   const featuredProjects = PROJECTS.filter((project) => project.featured);
 
   return (
-    <section id="projects" className="mx-auto space-y-8 px-4 py-12 md:px-0">
+    <section id="projects" className="mx-auto space-y-8 px-4 py-12">
       <PageHeader
         title="Featured Projects"
         description="Check out some of the projects I've worked on."
