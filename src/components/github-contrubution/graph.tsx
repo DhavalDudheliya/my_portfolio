@@ -32,7 +32,7 @@ export function GitHubContributionGraph({
     <TooltipProvider>
       <ContributionGraph className="py-2" data={contributions} blockRadius={2}>
         <ContributionGraphCalendar
-          className="no-scrollbar px-2"
+          className="no-scrollbar"
           title="GitHub Contributions"
         >
           {({ activity, dayIndex, weekIndex }) => (
