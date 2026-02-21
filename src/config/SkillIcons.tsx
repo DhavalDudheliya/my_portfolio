@@ -1,4 +1,4 @@
-import { Users, ClipboardList, Layers } from "lucide-react";
+import { ClipboardList, Layers, Users } from "lucide-react";
 
 export type SkillIconType =
   | {
@@ -55,7 +55,7 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
   },
   MongoDB: {
     type: "svg",
-    src: "/svgs/MongoDB.svg",
+    src: "/svgs/Mongodatabase.svg",
   },
   Docker: {
     type: "svg",
