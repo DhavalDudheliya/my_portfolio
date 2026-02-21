@@ -23,42 +23,28 @@ export type Project = {
 };
 
 export const PROJECTS: Project[] = [
-  // {
-  //   id: "1",
-  //   title: "Hostel Management System",
-  //   slug: "hostel-management-system",
-  //   description:
-  //     "A user-centric platform designed using MERN Stack for hostel authorities to efficiently manage operations, reducing reliance on Excel by 75%.",
-  //   // thumbnail: "/projects/p1.png",
-  //   thumbnail: "/projects/project-1.png",
-  //   technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-  //   status: "Completed",
-  //   links: {
-  //     github: "https://github.com/DhavalDudheliya/Hostel_Management",
-  //   },
-  //   featured: true,
-  // },
-  // {
-  //   id: "2",
-  //   title: "Lost and Found Helper System",
-  //   slug: "lost-and-found-helper-system",
-  //   description:
-  //     "A platform designed to help students retrieve lost items efficiently. This system streamlines the process of managing lost and found items, significantly reducing the need for physical office visits.",
-  //   thumbnail: "/projects/p2.png",
-  //   technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-  //   status: "Completed",
-  //   links: {
-  //     github: "https://github.com/DhavalDudheliya/LoastAndFound",
-  //   },
-  //   featured: true,
-  // },
   {
-    id: "3",
-    title: "Duolingo Clone",
-    slug: "duolingo-clone",
+    id: "1",
+    title: "Personal Portfolio",
+    slug: "personal-portfolio",
+    description:
+      "My developer portfolio built with Next.js 16, featuring MDX-powered blog and book reviews, animated UI with Motion, dark mode, GitHub contribution graph, SEO optimization, and a contact form with Telegram integration.",
+    thumbnail: "/projects/portfolio.png",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
+    status: "Completed",
+    links: {
+      github: "https://github.com/DhavalDudheliya/my_portfolio",
+      live: "https://dhavaldudheliya.site",
+    },
+    featured: true,
+  },
+  {
+    id: "2",
+    title: "Lingo - Language Learning Platform",
+    slug: "lingo-language-learning-platform",
     description:
       "A Duolingo-inspired language learning website built with Next.js, featuring AI-generated voices, Clerk authentication, Stripe payments, PostgreSQL, and Drizzle ORM. Includes admin dashboard, units, lessons, points, hearts, quests, leaderboards, and a shop.",
-    thumbnail: "/projects/project-1.png",
+    thumbnail: "/projects/lingo.png",
     technologies: [
       "Next.js",
       "Tailwind CSS",

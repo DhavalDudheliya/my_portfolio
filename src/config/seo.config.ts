@@ -52,6 +52,7 @@ export const seoConfig = {
     home: "/og/og-home.png",
     projects: "/og/og-projects.png",
     blog: "/og/og-blog.png",
+    books: "/og/og-books.png",
     resume: "/og/og-resume.png",
   },
 
@@ -80,6 +81,11 @@ export const seoConfig = {
       title: "Blog",
       description:
         "Thoughts, tutorials, and insights about web development, TypeScript, Node.js, React, Next.js, and software engineering.",
+    },
+    books: {
+      title: "Books",
+      description:
+        "A collection of books I've read along with my thoughts and key takeaways.",
     },
     resume: {
       title: "Resume",

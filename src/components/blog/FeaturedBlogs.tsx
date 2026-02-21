@@ -16,7 +16,7 @@ export default function FeaturedBlogs() {
   }
 
   return (
-    <section id="blogs" className="mx-auto space-y-8 px-4 py-20 md:px-0">
+    <section id="blogs" className="mx-auto space-y-8 px-2 py-20 md:px-4">
       <PageHeader
         title="Latest Blog Posts"
         description="Thoughts, tutorials, and insights about web development."
