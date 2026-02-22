@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
@@ -33,6 +34,11 @@ export default function RootLayout({
           suppressHydrationWarning
           className={`${geistSans.variable} ${geistMono.variable} font-mono antialiased`}
         >
+          {/* Subtle and sober dot background pattern */}
+          <div
+            className="animate-pulse-dots pointer-events-none fixed inset-0 z-[-1] bg-[radial-gradient(var(--color-border)_1px,transparent_1px)] bg-size-[24px_24px] opacity-30"
+            aria-hidden="true"
+          />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -43,6 +49,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </ThemeProvider>
+          <Analytics />
         </body>
       </html>
     </ViewTransitions>
