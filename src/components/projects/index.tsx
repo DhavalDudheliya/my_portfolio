@@ -26,7 +26,7 @@ export default function Projects() {
         ))}
       </div>
 
-      <div className="flex justify-center pt-4">
+      <FadeInView delay={0.4} className="flex justify-center pt-4">
         <Button
           variant="outline"
           size="lg"
@@ -36,7 +36,7 @@ export default function Projects() {
           Show All Projects
           <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
         </Button>
-      </div>
+      </FadeInView>
     </section>
   );
 }

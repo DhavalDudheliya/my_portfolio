@@ -33,6 +33,11 @@ export default function RootLayout({
           suppressHydrationWarning
           className={`${geistSans.variable} ${geistMono.variable} font-mono antialiased`}
         >
+          {/* Subtle and sober dot background pattern */}
+          <div
+            className="animate-pulse-dots pointer-events-none fixed inset-0 z-[-1] bg-[radial-gradient(var(--color-border)_1px,transparent_1px)] bg-size-[24px_24px] opacity-30"
+            aria-hidden="true"
+          />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

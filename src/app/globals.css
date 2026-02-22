@@ -58,6 +58,16 @@
       background-position: -200% 0;
     }
   }
+  @keyframes fade-in-dots {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: var(--dot-opacity, 0.3);
+    }
+  }
+
+  --animate-pulse-dots: fade-in-dots 1.5s ease-out forwards;
 }
 
 :root {
