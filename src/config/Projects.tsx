@@ -76,6 +76,9 @@ export const PROJECTS: Project[] = [
       "PostgreSQL",
     ],
     status: "Building",
+    links: {
+      github: "https://github.com/DhavalDudheliya/supportHub",
+    },
     featured: true,
   },
 ];
