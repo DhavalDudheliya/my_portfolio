@@ -11,15 +11,20 @@ import { ProjectCard } from "./ProjectCard";
 
 type FilterStatus = "All" | Project["status"];
 
-const FILTER_OPTIONS: FilterStatus[] = ["All", "Completed", "In Progress"];
+const FILTER_OPTIONS: FilterStatus[] = ["All", "Completed", "Building"];
 
 export function ProjectsList() {
   const [activeFilter, setActiveFilter] = useState<FilterStatus>("All");
 
-  const filteredProjects =
+  const filteredProjects = (
     activeFilter === "All"
       ? PROJECTS
-      : PROJECTS.filter((project) => project.status === activeFilter);
+      : PROJECTS.filter((project) => project.status === activeFilter)
+  ).sort((a, b) => {
+    if (a.status === "Building" && b.status !== "Building") return -1;
+    if (a.status !== "Building" && b.status === "Building") return 1;
+    return 0;
+  });
 
   return (
     <div className="space-y-6">

@@ -9,7 +9,13 @@ import PageHeader from "../core/PageHeader";
 import { ProjectCard } from "./ProjectCard";
 
 export default function Projects() {
-  const featuredProjects = PROJECTS.filter((project) => project.featured);
+  const featuredProjects = PROJECTS.filter((project) => project.featured).sort(
+    (a, b) => {
+      if (a.status === "Building" && b.status !== "Building") return -1;
+      if (a.status !== "Building" && b.status === "Building") return 1;
+      return 0;
+    },
+  );
 
   return (
     <section id="projects" className="mx-auto space-y-8 px-4 py-12">

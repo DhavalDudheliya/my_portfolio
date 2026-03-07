@@ -8,6 +8,7 @@ export interface Book {
   title: string;
   coverImage: string;
   published: boolean;
+  currentlyReading: boolean;
 }
 
 // Full book with content
@@ -51,6 +52,7 @@ export function getBookBySlug(slug: string): BookWithContent | null {
       title: data.title || "Untitled",
       coverImage: data.coverImage || "",
       published: data.published !== false,
+      currentlyReading: data.currentlyReading === true,
       content,
     };
   } catch {
@@ -72,7 +74,12 @@ export function getAllBooks(): Book[] {
       const { content: _, ...metadata } = book;
       return metadata;
     })
-    .filter((book): book is Book => book !== null && book.published);
+    .filter((book): book is Book => book !== null && book.published)
+    .sort((a, b) => {
+      if (a.currentlyReading && !b.currentlyReading) return -1;
+      if (!a.currentlyReading && b.currentlyReading) return 1;
+      return 0; // Keep original order for others
+    });
 
   return books;
 }

@@ -1,4 +1,6 @@
+import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
+import { Link } from "next-view-transitions";
 
 import { BlogCard } from "@/components/blog";
 import { FadeInView } from "@/components/core/FadeInView";
@@ -13,6 +15,15 @@ export default function BlogPage() {
 
   return (
     <section className="mx-auto max-w-4xl space-y-8 px-4 py-20 md:px-0">
+      <FadeInView>
+        <Link
+          href="/"
+          className="text-muted-foreground hover:text-primary inline-flex items-center gap-2 text-sm transition-colors"
+        >
+          <ArrowLeft className="size-4" />
+          Back to Home
+        </Link>
+      </FadeInView>
       <PageHeader
         title="All Blogs"
         description="Sharing my thoughts and tutorials on web development and software engineering"

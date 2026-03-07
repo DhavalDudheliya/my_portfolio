@@ -11,12 +11,27 @@ interface BookCardProps {
 
 export function BookCard({ book }: BookCardProps) {
   return (
-    <Link href={`/books/${book.slug}`} className="group block">
-      <article className="flex flex-col items-start">
+    <Link href={`/books/${book.slug}`} className="group block h-full">
+      <article className="flex h-full flex-col items-center">
         {/* Book wrapper with 3D perspective */}
         <div className="relative w-full max-w-[200px] perspective-[600px]">
           {/* Book body */}
           <div className="relative transition-transform duration-500 ease-out transform-3d group-hover:transform-[rotateY(-8deg)]">
+            {/* Currently Reading Badge */}
+            {book.currentlyReading && (
+              <div className="absolute -top-2 -right-2 z-30 flex h-8 items-center gap-1 rounded-full border border-black/20 bg-white/30 font-semibold text-cyan-300 shadow-lg shadow-black/30 backdrop-blur-xl">
+                {/* GIF */}
+                <Image
+                  src="/gifs/read.gif"
+                  alt="Reading"
+                  width={20}
+                  height={20}
+                  className="h-full w-full rounded-full object-contain"
+                  unoptimized
+                />
+              </div>
+            )}
+
             {/* Front Cover */}
             <div className="relative aspect-2/3 w-full overflow-hidden rounded-sm rounded-r-md">
               {/* Spine highlight — thin bright strip on left */}
