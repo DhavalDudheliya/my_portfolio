@@ -19,7 +19,7 @@ export function BookCard({ book }: BookCardProps) {
           <div className="relative transition-transform duration-500 ease-out transform-3d group-hover:transform-[rotateY(-8deg)]">
             {/* Currently Reading Badge */}
             {book.currentlyReading && (
-              <div className="white absolute -top-2 -right-2 z-30 flex h-8 items-center gap-1 rounded-full border border-black/20 bg-white/30 font-semibold text-cyan-300 shadow-lg shadow-black/30 backdrop-blur-xl">
+              <div className="absolute -top-2 -right-2 z-30 flex h-8 items-center gap-1 rounded-full border border-black/20 bg-white/30 font-semibold text-cyan-300 shadow-lg shadow-black/30 backdrop-blur-xl">
                 {/* GIF */}
                 <Image
                   src="/gifs/read.gif"
