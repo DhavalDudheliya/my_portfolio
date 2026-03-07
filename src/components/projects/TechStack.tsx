@@ -55,7 +55,7 @@ export function TechStack({ technologies }: TechStackProps) {
                 <span className="text-[10px]">{tech.slice(0, 2)}</span>
               )}
             </div>
-            <span className="text-secondary-foreground max-w-0 overflow-hidden text-[10px] font-medium whitespace-nowrap opacity-0 transition-all duration-300 ease-in-out group-hover/icon:ml-2 group-hover/icon:max-w-[100px] group-hover/icon:opacity-100">
+            <span className="text-secondary-foreground max-w-0 cursor-default overflow-hidden text-[10px] font-medium whitespace-nowrap opacity-0 transition-all duration-300 ease-in-out group-hover/icon:ml-2 group-hover/icon:max-w-[100px] group-hover/icon:opacity-100">
               {tech}
             </span>
           </div>

@@ -14,7 +14,7 @@ export type Project = {
   description: string;
   thumbnail: string;
   technologies: string[];
-  status: "Completed" | "In Progress";
+  status: "Completed" | "Building";
   links?: {
     live?: string;
     github?: string;
@@ -57,6 +57,25 @@ export const PROJECTS: Project[] = [
     links: {
       github: "https://github.com/DhavalDudheliya/DuoLingo_Clone",
     },
+    featured: true,
+  },
+  {
+    id: "3",
+    title: "SupportHub",
+    slug: "supporthub",
+    description:
+      "A Zendesk-inspired customer support web application currently in development. It features a comprehensive ticketing system and real-time chat capabilities to streamline customer service operations.",
+    thumbnail: "/projects/supporthub.png",
+    technologies: [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+    ],
+    status: "Building",
     featured: true,
   },
 ];
