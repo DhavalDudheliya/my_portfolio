@@ -27,6 +27,7 @@ export function BookCard({ book }: BookCardProps) {
                   width={20}
                   height={20}
                   className="h-full w-full rounded-full object-contain"
+                  unoptimized
                 />
               </div>
             )}
