@@ -61,6 +61,29 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "3",
+    title: "InkDown - Advanced Markdown Editor",
+    slug: "inkdown",
+    description:
+      "A privacy-first, purely client-side Markdown editor built with Next.js 15, featuring pixel-perfect PDF exports, real-time Shiki syntax highlighting, KaTeX math blocks, and Mermaid diagrams. Includes deep customization with over 50 Google Fonts and 15+ syntax themes.",
+    thumbnail: "/projects/inkdown.png",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Zustand",
+      "Shiki",
+      "Mermaid",
+      "CodeMirror",
+    ],
+    status: "Completed",
+    links: {
+      github: "https://github.com/DhavalDudheliya/InkDown",
+      live: "https://inkdownn.vercel.app",
+    },
+    featured: true,
+  },
+  {
+    id: "4",
     title: "SupportHub",
     slug: "supporthub",
     description:

@@ -42,6 +42,7 @@ export function ProjectCard({ project }: { project: Project }) {
         width={1920}
         height={1080}
         className="object-cover transition-transform duration-300 hover:scale-105"
+        unoptimized
       />
       <CardContent className="flex-1 space-y-4 px-6 py-4">
         <p className="text-muted-foreground line-clamp-3 text-sm">
