@@ -172,4 +172,21 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
     src: "/svgs/Drizzle ORM_light.svg",
     darkSrc: "/svgs/Drizzle ORM_dark.svg",
   },
+  Zustand: {
+    type: "svg",
+    src: "/svgs/zustand.svg",
+  },
+  Shiki: {
+    type: "svg",
+    src: "/svgs/shiki.svg",
+  },
+  Mermaid: {
+    type: "svg",
+    src: "/svgs/mermaid_light.svg",
+    darkSrc: "/svgs/mermaid_dark.svg",
+  },
+  CodeMirror: {
+    type: "svg",
+    src: "/svgs/codemirror.svg",
+  },
 };

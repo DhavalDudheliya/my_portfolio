@@ -13,7 +13,7 @@ export default function Projects() {
     (a, b) => {
       if (a.status === "Building" && b.status !== "Building") return -1;
       if (a.status !== "Building" && b.status === "Building") return 1;
-      return 0;
+      return b.id.localeCompare(a.id, undefined, { numeric: true });
     },
   );
 
