@@ -115,7 +115,7 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
     type: "component",
     component: <span className="font-bold text-zinc-500">Yup</span>, // Simple text fallback
   },
-  "Framer Motion": {
+  "Motion React": {
     type: "svg",
     src: "/svgs/Motion_light.svg",
     darkSrc: "/svgs/Motion_dark.svg",
@@ -188,5 +188,18 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
   CodeMirror: {
     type: "svg",
     src: "/svgs/codemirror.svg",
+  },
+  NestJS: {
+    type: "svg",
+    src: "/svgs/nestjs.svg",
+  },
+  "TanStack Query": {
+    type: "svg",
+    src: "/svgs/tanstack.svg",
+  },
+  Vercel: {
+    type: "svg",
+    src: "/svgs/Vercel_light.svg",
+    darkSrc: "/svgs/Vercel_dark.svg",
   },
 };

@@ -174,7 +174,10 @@ export const SKILLS: SkillCategory[] = [
       },
       {
         name: "Vercel",
-        icon: { light: "/svgs/vercel.svg", dark: "/svgs/vercel.svg" },
+        icon: {
+          light: "/svgs/Vercel_light.svg",
+          dark: "/svgs/Vercel_dark.svg",
+        },
       },
       {
         name: "Netlify",
