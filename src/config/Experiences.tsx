@@ -1,4 +1,4 @@
-import { BookOpen, Briefcase, Code, TrendingUp, User2 } from "lucide-react";
+import { BookOpen, Code, TrendingUp, Users } from "lucide-react";
 
 export type ExperiencePosition = {
   id: string;
@@ -63,7 +63,7 @@ export const EXPERIENCES: Experience[] = [
 - Provisioned and managed cloud infrastructure on **AWS** (EC2, S3) with **CI/CD** pipelines, enabling automated and reliable deployments via **[Vercel](https://vercel.com)**.
 - Created an automated **IELTS test paper generator** from DOCX templates, reducing teacher workload by **75%** and streamlining test creation pipelines.
 - Implemented end-to-end **[Razorpay](https://razorpay.com)** payment gateway integration alongside secure user authentication and authorization using **[BetterAuth](https://better-auth.com)**.`,
-        icon: <User2 className="size-4" />,
+        icon: <Users className="size-4" />,
         skills: [
           "Team Leadership",
           "Project Management",

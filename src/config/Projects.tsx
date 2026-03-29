@@ -30,7 +30,13 @@ export const PROJECTS: Project[] = [
     description:
       "My developer portfolio built with Next.js 16, featuring MDX-powered blog and book reviews, animated UI with Motion, dark mode, GitHub contribution graph, SEO optimization, and a contact form with Telegram integration.",
     thumbnail: "/projects/portfolio.png",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Motion React",
+    ],
     status: "Completed",
     links: {
       github: "https://github.com/DhavalDudheliya/my_portfolio",
@@ -56,6 +62,7 @@ export const PROJECTS: Project[] = [
     status: "Completed",
     links: {
       github: "https://github.com/DhavalDudheliya/DuoLingo_Clone",
+      live: "https://lingolearning.vercel.app",
     },
     featured: true,
   },
