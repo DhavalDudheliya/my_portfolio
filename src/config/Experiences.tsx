@@ -47,7 +47,7 @@ export const EXPERIENCES: Experience[] = [
     companyLogo: "/assets/nexuslink_logo.png",
     links: {
       website: "https://nexuslinkservices.com",
-      linkedin: "https://linkedin.com/company/nexuslinkservices",
+      linkedin: "https://www.linkedin.com/company/nexuslink-services",
     },
     positions: [
       {
@@ -111,8 +111,8 @@ export const EXPERIENCES: Experience[] = [
     companyName: "Vasundhara Infotech LLP",
     companyLogo: "/assets/vasundhara_infotech_logo.jpeg",
     links: {
-      website: "https://vasundharainfotech.com",
-      linkedin: "https://linkedin.com/company/vasundhara-infotech",
+      website: "https://www.vasundhara.io",
+      linkedin: "https://www.linkedin.com/company/vasundhara-infotech",
     },
     positions: [
       {

@@ -124,6 +124,13 @@ export const SKILLS: SkillCategory[] = [
           dark: "/svgs/Drizzle ORM_dark.svg",
         },
       },
+      {
+        name: "Socket.IO",
+        icon: {
+          light: "/svgs/socketio-icon-light.svg",
+          dark: "/svgs/socketio-icon-dark.svg",
+        },
+      },
     ],
   },
   {
