@@ -58,7 +58,7 @@ export const EXPERIENCES: Experience[] = [
           end: "03.2026",
         },
         employmentType: "Full-time",
-        description: `- Grew into a **Project Lead** role, leading a 2-developer team, driving technical architecture decisions, and conducting regular code reviews to maintain high code quality.
+        description: `- Grew into a **Project Lead** role, leading a 3-developer team, driving technical architecture decisions, and conducting regular code reviews to maintain high code quality.
 - Built **SEO-optimized**, server-rendered web applications using **[Next.js](https://nextjs.org)** with **[Tailwind CSS](https://tailwindcss.com)** and **[Shadcn UI](https://ui.shadcn.com)** for polished, accessible interfaces.
 - Provisioned and managed cloud infrastructure on **AWS** (EC2, S3) with **CI/CD** pipelines, enabling automated and reliable deployments via **[Vercel](https://vercel.com)**.
 - Created an automated **IELTS test paper generator** from DOCX templates, reducing teacher workload by **75%** and streamlining test creation pipelines.
