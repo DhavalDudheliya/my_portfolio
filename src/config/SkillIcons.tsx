@@ -1,4 +1,4 @@
-import { ClipboardList, Layers, Users } from "lucide-react";
+import { ClipboardList, Infinity, Layers, Users } from "lucide-react";
 
 export type SkillIconType =
   | {
@@ -115,7 +115,7 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
     type: "component",
     component: <span className="font-bold text-zinc-500">Yup</span>, // Simple text fallback
   },
-  "Framer Motion": {
+  "Motion React": {
     type: "svg",
     src: "/svgs/Motion_light.svg",
     darkSrc: "/svgs/Motion_dark.svg",
@@ -182,11 +182,33 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
   },
   Mermaid: {
     type: "svg",
-    src: "/svgs/mermaid_light.svg",
-    darkSrc: "/svgs/mermaid_dark.svg",
+    src: "/svgs/mermaid_light_icon.svg",
+    darkSrc: "/svgs/mermaid_dark_icon.svg",
   },
   CodeMirror: {
     type: "svg",
     src: "/svgs/codemirror.svg",
+  },
+  NestJS: {
+    type: "svg",
+    src: "/svgs/nestjs.svg",
+  },
+  "TanStack Query": {
+    type: "svg",
+    src: "/svgs/tanstack.svg",
+  },
+  Vercel: {
+    type: "svg",
+    src: "/svgs/Vercel_light.svg",
+    darkSrc: "/svgs/Vercel_dark.svg",
+  },
+  AWS: {
+    type: "svg",
+    src: "/svgs/aws_light.svg",
+    darkSrc: "/svgs/aws_dark.svg",
+  },
+  "CI/CD": {
+    type: "component",
+    component: <Infinity className="size-3.5 text-blue-500" />,
   },
 };

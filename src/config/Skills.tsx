@@ -124,6 +124,13 @@ export const SKILLS: SkillCategory[] = [
           dark: "/svgs/Drizzle ORM_dark.svg",
         },
       },
+      {
+        name: "Socket.IO",
+        icon: {
+          light: "/svgs/socketio-icon-light.svg",
+          dark: "/svgs/socketio-icon-dark.svg",
+        },
+      },
     ],
   },
   {
@@ -174,7 +181,10 @@ export const SKILLS: SkillCategory[] = [
       },
       {
         name: "Vercel",
-        icon: { light: "/svgs/vercel.svg", dark: "/svgs/vercel.svg" },
+        icon: {
+          light: "/svgs/Vercel_light.svg",
+          dark: "/svgs/Vercel_dark.svg",
+        },
       },
       {
         name: "Netlify",

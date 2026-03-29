@@ -21,29 +21,29 @@ import TypeScript from "@/components/technologies/TypeScript";
 import Vercel from "@/components/technologies/Vercel";
 
 export const TechnologyIcons: Record<string, React.ComponentType> = {
-    "AWS": AWS,
-    "Bootstrap": BootStrap,
-    "CSS": CSS,
-    "Express": ExpressJs,
-    "Figma": Figma,
-    "Github": Github,
-    "HTML": Html,
-    "JavaScript": JavaScript,
-    "MongoDB": MongoDB,
-    "Framer Motion": Motion,
-    "Netlify": Netlify,
-    "Next.js": NextJs,
-    "Node.js": NodeJs,
-    "PostgreSQL": PostgreSQL,
-    "Postman": Postman,
-    "Prisma": Prisma,
-    "React": ReactIcon,
-    "Shadcn": Shadcn,
-    "TailwindCSS": TailwindCss,
-    "TypeScript": TypeScript,
-    "Vercel": Vercel,
+  AWS: AWS,
+  Bootstrap: BootStrap,
+  CSS: CSS,
+  Express: ExpressJs,
+  Figma: Figma,
+  Github: Github,
+  HTML: Html,
+  JavaScript: JavaScript,
+  MongoDB: MongoDB,
+  "Motion React": Motion,
+  Netlify: Netlify,
+  "Next.js": NextJs,
+  "Node.js": NodeJs,
+  PostgreSQL: PostgreSQL,
+  Postman: Postman,
+  Prisma: Prisma,
+  React: ReactIcon,
+  Shadcn: Shadcn,
+  TailwindCSS: TailwindCss,
+  TypeScript: TypeScript,
+  Vercel: Vercel,
 };
 
 export function getTechnologyIcon(name: string) {
-    return TechnologyIcons[name] || null;
+  return TechnologyIcons[name] || null;
 }
