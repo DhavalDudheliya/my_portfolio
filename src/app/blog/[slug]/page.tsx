@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { BlogHeader, TableOfContents } from "@/components/blog";
+import { BlogHeader, BlogReactions } from "@/components/blog";
 import { MDXContent } from "@/components/blog/MDXContent";
 import { ArticleJsonLd } from "@/components/seo/JsonLd";
 import { getAllPosts, getPostBySlug, getPostSlugs } from "@/lib/blog";
@@ -84,6 +84,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             {/* MDX Content - pass raw content, RSC MDXRemote handles compilation */}
             <MDXContent source={post.content} />
+
+            {/* Reactions */}
+            <BlogReactions slug={slug} />
 
             {/* Post Navigation */}
             {(prevPost || nextPost) && (
