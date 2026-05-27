@@ -39,7 +39,7 @@ export function BlogReactions({ slug }: BlogReactionsProps) {
         Reactions
       </p>
 
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-2">
         {REACTION_TYPES.map((reaction) => {
           const isActive = userReactions.includes(reaction.id);
           const count = counts[reaction.id] ?? 0;
@@ -53,9 +53,11 @@ export function BlogReactions({ slug }: BlogReactionsProps) {
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
               disabled={isLoading}
               className={cn(
-                "relative flex flex-col items-center gap-1.5 rounded-lg px-3.5 py-2.5 transition-colors duration-200",
+                "relative flex cursor-pointer flex-col items-center gap-1.5 rounded-lg border border-neutral-100 px-3.5 py-2.5 transition-colors duration-200 dark:border-white/10",
                 isLoading && "cursor-wait opacity-50",
-                isActive ? "bg-accent/60" : "hover:bg-accent/30",
+                isActive
+                  ? "bg-accent dark:bg-accent/60"
+                  : "hover:bg-accent dark:hover:bg-accent/30",
               )}
               aria-label={`React with ${reaction.label}`}
               title={reaction.label}

@@ -15,7 +15,7 @@ export function BlogCard({ post }: BlogCardProps) {
     <Link href={`/blog/${post.slug}`} className="group block">
       <article className="flex flex-col gap-4 border-b py-6 transition-colors md:flex-row md:gap-8">
         {/* Image Section */}
-        <div className="border-border relative aspect-4/3 w-full shrink-0 overflow-hidden rounded-xl border md:aspect-square md:h-64 md:w-64 lg:h-64 lg:w-80">
+        <div className="border-border relative aspect-4/3 w-full shrink-0 overflow-hidden rounded-xl border md:aspect-square md:h-64 md:w-80 lg:h-64 lg:w-90">
           {post.coverImage ? (
             <Image
               src={post.coverImage}
