@@ -14,7 +14,7 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <section className="mx-auto max-w-4xl space-y-8 px-4 py-20 md:px-0">
+    <section className="mx-auto max-w-4xl space-y-8 px-4 py-20 md:px-8">
       <FadeInView>
         <Link
           href="/"

@@ -2,11 +2,11 @@ import Image, { type ImageProps } from "next/image";
 import Link from "next/link";
 import type { ComponentPropsWithoutRef, ComponentType, ReactNode } from "react";
 
+import { Quote } from "@/components/ui/Quote";
 import { cn } from "@/lib/utils";
 
 import { Callout } from "./Callout";
 import { CodeBlock } from "./CodeBlock";
-import { Quote } from "@/components/ui/Quote";
 
 // MDX components type definition
 type MDXComponents = {
@@ -147,29 +147,49 @@ export const BlogMDXComponents: MDXComponents = {
 
   // Table
   table: ({ className, ...props }: TableProps) => (
-    <div className="my-6 w-full overflow-x-auto">
-      <table
-        className={cn("w-full border-collapse text-sm", className)}
-        {...props}
-      />
+    <div className="dark:border-border/60 dark:bg-card/40 my-8 overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 shadow-[0_18px_50px_-30px_rgba(15,23,42,0.18)] ring-1 ring-white/70 backdrop-blur-sm dark:shadow-[0_20px_60px_-40px_rgba(0,0,0,0.9)] dark:ring-0">
+      <div className="w-full overflow-x-auto">
+        <table
+          className={cn(
+            "my-0! w-full min-w-[720px] border-separate border-spacing-0 text-sm leading-6 [&_code]:text-[0.95em]",
+            className,
+          )}
+          {...props}
+        />
+      </div>
     </div>
   ),
   thead: ({ className, ...props }: THeadProps) => (
-    <thead className={cn("bg-muted/50", className)} {...props} />
+    <thead
+      className={cn(
+        "bg-gradient-to-b from-slate-50 to-slate-100/90 backdrop-blur supports-[backdrop-filter]:bg-slate-50/90 dark:bg-zinc-900 dark:bg-none dark:supports-[backdrop-filter]:bg-zinc-900/95",
+        className,
+      )}
+      {...props}
+    />
   ),
   tbody: ({ className, ...props }: TBodyProps) => (
-    <tbody className={cn("[&>tr:last-child]:border-0", className)} {...props} />
+    <tbody
+      className={cn(
+        "dark:[&>tr:nth-child(even)]:bg-muted/[0.16] [&>tr:last-child_td]:border-b-0 [&>tr:nth-child(even)]:bg-slate-50/70",
+        className,
+      )}
+      {...props}
+    />
   ),
   tr: ({ className, ...props }: TRProps) => (
     <tr
-      className={cn("border-border border-b transition-colors", className)}
+      className={cn(
+        "dark:hover:bg-muted/[0.24] transition-colors hover:bg-slate-100/80",
+        className,
+      )}
       {...props}
     />
   ),
   th: ({ className, ...props }: THProps) => (
     <th
       className={cn(
-        "text-foreground h-12 px-4 text-left font-semibold [&:has([role=checkbox])]:pr-0",
+        "dark:border-border/70 dark:text-foreground h-14 border-b border-slate-200 px-5 pb-0! text-left align-middle text-[0.95rem] font-semibold tracking-tight text-slate-900 first:w-[190px] first:min-w-[190px] [&:has([role=checkbox])]:pr-0",
         className,
       )}
       {...props}
@@ -178,7 +198,7 @@ export const BlogMDXComponents: MDXComponents = {
   td: ({ className, ...props }: TDProps) => (
     <td
       className={cn(
-        "p-4 align-middle [&:has([role=checkbox])]:pr-0",
+        "dark:border-border/50 dark:text-foreground/85 dark:first:text-foreground border-b border-slate-200/80 px-5 py-4 align-top text-slate-700 first:font-semibold first:text-slate-900 [&:has([role=checkbox])]:pr-0",
         className,
       )}
       {...props}
@@ -194,7 +214,7 @@ export const BlogMDXComponents: MDXComponents = {
       return (
         <code
           className={cn(
-            "bg-muted relative rounded px-[0.4rem] py-[0.2rem] font-mono text-sm",
+            "bg-muted relative rounded-md px-[0.4rem] py-[0.2rem] font-mono text-sm",
             className,
           )}
           {...props}
