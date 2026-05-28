@@ -31,7 +31,7 @@ export async function generateMetadata({
   }
 
   const postUrl = `/blog/${post.slug}`;
-  const image = post.coverImage || seoConfig.ogImages.blog;
+  const image = `${postUrl}/opengraph-image`;
 
   return {
     title: `${post.title} | Blog`,
