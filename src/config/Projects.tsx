@@ -40,7 +40,7 @@ export const PROJECTS: Project[] = [
     status: "Completed",
     links: {
       github: "https://github.com/DhavalDudheliya/my_portfolio",
-      live: "https://dhavaldudheliya.site",
+      live: "https://dhavaldudheliya.com",
     },
     featured: true,
   },

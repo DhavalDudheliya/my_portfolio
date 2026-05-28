@@ -3,7 +3,7 @@
 
 export const seoConfig = {
   // Base URL - Change this when deploying to a new domain
-  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "https://dhavaldudheliya.site",
+  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "https://dhavaldudheliya.com",
 
   // Site Information
   siteName: "Dhaval Dudheliya",
