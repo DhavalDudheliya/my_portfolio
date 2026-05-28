@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BlogHeader, BlogReactions } from "@/components/blog";
 import { MDXContent } from "@/components/blog/MDXContent";
 import { ArticleJsonLd } from "@/components/seo/JsonLd";
+import { seoConfig } from "@/config/seo.config";
 import { getAllPosts, getPostBySlug, getPostSlugs } from "@/lib/blog";
 
 interface BlogPostPageProps {
@@ -29,20 +30,37 @@ export async function generateMetadata({
     };
   }
 
+  const postUrl = `/blog/${post.slug}`;
+  const image = post.coverImage || seoConfig.ogImages.blog;
+
   return {
     title: `${post.title} | Blog`,
     description: post.description,
+    alternates: {
+      canonical: postUrl,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
+      url: postUrl,
       publishedTime: post.date,
       tags: post.tags,
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      creator: `@${seoConfig.twitterHandle}`,
+      images: [image],
     },
   };
 }
@@ -62,8 +80,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
   const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
 
-  const BASE_URL =
-    process.env.NEXT_PUBLIC_BASE_URL || "https://dhavaldudheliya.site";
+  const BASE_URL = seoConfig.baseUrl;
 
   return (
     <>
