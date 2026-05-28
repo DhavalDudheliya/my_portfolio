@@ -100,6 +100,8 @@ function UserAvatar() {
 }
 ```
 
+<ContextRerenderVisualizer />
+
 You _can_ work around this by splitting contexts, memoizing values, or using `useReducer` — but at that point, you're essentially building your own state management solution. And that's exactly the moment when you start looking at Redux.
 
 > **Use Context when:** your state is simple, updates are infrequent, and you don't want to add a dependency. Don't use it as a global store for frequently changing, complex state.
