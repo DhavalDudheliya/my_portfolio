@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Quicksand } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
 
 import Footer from "@/components/core/Footer";
@@ -10,9 +10,10 @@ import Navbar from "@/components/core/Navbar";
 import { ThemeProvider } from "@/components/core/ThemeProviders";
 import { generateLayoutMetadata } from "@/config/seo.config";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -32,7 +33,7 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body
           suppressHydrationWarning
-          className={`${geistSans.variable} ${geistMono.variable} font-mono antialiased`}
+          className={`${quicksand.variable} ${geistMono.variable} font-sans antialiased`}
         >
           {/* Subtle and sober dot background pattern */}
           <div

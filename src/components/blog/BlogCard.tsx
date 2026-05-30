@@ -39,7 +39,7 @@ export function BlogCard({ post }: BlogCardProps) {
                 <Badge
                   key={tag}
                   variant="outline"
-                  className="rounded-sm px-2 py-0.5 text-xs font-normal"
+                  className="border-border/70 bg-muted/45 text-muted-foreground rounded-full px-2.5 py-1 text-[11px] leading-none font-medium shadow-xs"
                 >
                   {tag}
                 </Badge>
