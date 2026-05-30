@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 
+import { toastManager } from "@/components/ui/toast";
+
 import { type ReactionCounts, type ReactionType } from "./reactions-data";
 
 export {
@@ -41,6 +43,12 @@ export const useReactions = (slug: string) => {
 
   const toggleReaction = useCallback(
     async (reactionId: ReactionType) => {
+      if (isLoading) {
+        return;
+      }
+
+      setIsLoading(true);
+
       const wasActive = userReactions.includes(reactionId);
       const previousUserReactions = userReactions;
       const previousCounts = counts;
@@ -75,12 +83,20 @@ export const useReactions = (slug: string) => {
         const data = await res.json();
         setCounts(data.counts ?? {});
         setUserReactions(data.userReactions ?? []);
-      } catch {
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+        console.error(error);
+        toastManager.add({
+          type: "error",
+          title: "Reaction not saved",
+          description: "Please try again in a moment.",
+        });
         setCounts(previousCounts);
         setUserReactions(previousUserReactions);
       }
     },
-    [counts, slug, userReactions],
+    [counts, isLoading, slug, userReactions],
   );
 
   return { counts, userReactions, toggleReaction, isLoading };
