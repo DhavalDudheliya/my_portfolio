@@ -61,7 +61,11 @@ export function BlogHeader({ post }: BlogHeaderProps) {
       {/* Tags */}
       <div className="mt-4 flex flex-wrap gap-2">
         {post.tags.map((tag) => (
-          <Badge key={tag} variant="secondary">
+          <Badge
+            key={tag}
+            variant="outline"
+            className="border-border/70 bg-muted/45 text-muted-foreground rounded-full px-2.5 py-1 text-[11px] leading-none font-medium shadow-xs"
+          >
             {tag}
           </Badge>
         ))}

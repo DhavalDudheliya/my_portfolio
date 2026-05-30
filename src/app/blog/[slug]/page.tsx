@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { BlogHeader, BlogReactions } from "@/components/blog";
+import {
+  BlogHeader,
+  BlogReactions,
+  BlogShare,
+  TableOfContents,
+} from "@/components/blog";
 import { MDXContent } from "@/components/blog/MDXContent";
 import { ArticleJsonLd } from "@/components/seo/JsonLd";
 import { seoConfig } from "@/config/seo.config";
@@ -81,23 +86,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
 
   const BASE_URL = seoConfig.baseUrl;
+  const postUrl = `${BASE_URL}/blog/${slug}`;
 
   return (
     <>
       <ArticleJsonLd
         title={post.title}
         description={post.description}
-        url={`${BASE_URL}/blog/${slug}`}
+        url={postUrl}
         datePublished={post.date}
         authorName="Dhaval Dudheliya"
         authorUrl={BASE_URL}
       />
       <main className="container mx-auto px-4 py-12 sm:py-16">
-        <div className="mx-auto max-w-4xl">
-          {/* <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_220px]"> */}
-          {/* Main Content */}
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 xl:grid-cols-[72px_minmax(0,820px)_288px]">
+          <aside className="hidden xl:block">
+            <div className="sticky top-28">
+              <BlogShare
+                title={post.title}
+                url={postUrl}
+                orientation="vertical"
+              />
+            </div>
+          </aside>
+
           <article className="min-w-0">
             <BlogHeader post={post} />
+
+            <div className="mb-8 xl:hidden">
+              <BlogShare title={post.title} url={postUrl} />
+            </div>
 
             {/* MDX Content - pass raw content, RSC MDXRemote handles compilation */}
             <MDXContent source={post.content} />
@@ -139,13 +157,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </nav>
             )}
           </article>
+
+          <aside className="hidden xl:block">
+            <TableOfContents content={post.content} />
+          </aside>
         </div>
-        {/* Table of Contents Sidebar */}
-        {/* <aside className="hidden lg:block">
-              <div className="sticky top-24">
-                <TableOfContents content={post.content} />
-              </div>
-            </aside> */}
       </main>
     </>
   );

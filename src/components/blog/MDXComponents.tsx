@@ -134,7 +134,10 @@ export const BlogMDXComponents: MDXComponents = {
   blockquote: ({ className, ...props }: BlockquoteProps) => (
     <blockquote
       className={cn(
-        "border-primary text-muted-foreground mt-6 border-l-4 pl-6 italic",
+        "border-primary/70 bg-primary/[0.035] text-foreground/80 border-border/70 dark:bg-primary/[0.07] dark:text-foreground/75 relative my-7 overflow-hidden rounded-lg border py-4 pr-5 pl-6 text-[1.02rem] leading-8 italic shadow-sm",
+        "before:bg-primary before:absolute before:inset-y-3 before:left-0 before:w-1 before:rounded-r-full",
+        "[&>p]:my-0 [&>p]:leading-8 [&>p:not(:first-child)]:mt-3",
+        "[&_strong]:text-foreground [&_strong]:font-semibold",
         className,
       )}
       {...props}
