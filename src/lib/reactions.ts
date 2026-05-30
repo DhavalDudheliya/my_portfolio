@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 
+import { toastManager } from "@/components/ui/toast";
+
 import { type ReactionCounts, type ReactionType } from "./reactions-data";
 
 export {
@@ -41,7 +43,15 @@ export const useReactions = (slug: string) => {
 
   const toggleReaction = useCallback(
     async (reactionId: ReactionType) => {
+      if (isLoading) {
+        return;
+      }
+
+      setIsLoading(true);
+
       const wasActive = userReactions.includes(reactionId);
+      const previousUserReactions = userReactions;
+      const previousCounts = counts;
 
       // Optimistic update
       if (wasActive) {
@@ -66,16 +76,27 @@ export const useReactions = (slug: string) => {
           body: JSON.stringify({ slug, reaction: reactionId }),
         });
 
-        if (res.ok) {
-          const data = await res.json();
-          setCounts(data.counts ?? {});
-          setUserReactions(data.userReactions ?? []);
+        if (!res.ok) {
+          throw new Error("Failed to sync reaction");
         }
-      } catch {
-        // Keep optimistic state on failure
+
+        const data = await res.json();
+        setCounts(data.counts ?? {});
+        setUserReactions(data.userReactions ?? []);
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+        console.error(error);
+        toastManager.add({
+          type: "error",
+          title: "Reaction not saved",
+          description: "Please try again in a moment.",
+        });
+        setCounts(previousCounts);
+        setUserReactions(previousUserReactions);
       }
     },
-    [slug, userReactions],
+    [counts, isLoading, slug, userReactions],
   );
 
   return { counts, userReactions, toggleReaction, isLoading };
