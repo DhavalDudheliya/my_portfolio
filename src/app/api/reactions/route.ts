@@ -82,8 +82,8 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("Error toggling reaction:", error);
     return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 },
+      { error: "Reaction service unavailable" },
+      { status: 503 },
     );
   }
 }

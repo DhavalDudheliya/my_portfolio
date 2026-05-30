@@ -42,6 +42,8 @@ export const useReactions = (slug: string) => {
   const toggleReaction = useCallback(
     async (reactionId: ReactionType) => {
       const wasActive = userReactions.includes(reactionId);
+      const previousUserReactions = userReactions;
+      const previousCounts = counts;
 
       // Optimistic update
       if (wasActive) {
@@ -66,16 +68,19 @@ export const useReactions = (slug: string) => {
           body: JSON.stringify({ slug, reaction: reactionId }),
         });
 
-        if (res.ok) {
-          const data = await res.json();
-          setCounts(data.counts ?? {});
-          setUserReactions(data.userReactions ?? []);
+        if (!res.ok) {
+          throw new Error("Failed to sync reaction");
         }
+
+        const data = await res.json();
+        setCounts(data.counts ?? {});
+        setUserReactions(data.userReactions ?? []);
       } catch {
-        // Keep optimistic state on failure
+        setCounts(previousCounts);
+        setUserReactions(previousUserReactions);
       }
     },
-    [slug, userReactions],
+    [counts, slug, userReactions],
   );
 
   return { counts, userReactions, toggleReaction, isLoading };
