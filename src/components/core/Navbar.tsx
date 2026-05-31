@@ -30,11 +30,11 @@ const Navbar = () => {
         >
           <Link href="/">
             <Image
-              className="h-10 w-10 rounded-full border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300"
-              src={"/assets/me.jpg"}
-              alt="me"
-              width={100}
-              height={100}
+              src="/assets/logo.png"
+              alt="DD Logo"
+              width={40}
+              height={40}
+              className="rounded-full shadow-lg ring-2 shadow-white/5 ring-white/10 transition-transform duration-300 hover:scale-95"
             />
           </Link>
         </motion.div>

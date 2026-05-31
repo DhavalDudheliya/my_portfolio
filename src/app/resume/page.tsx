@@ -1,5 +1,5 @@
+import { ArrowLeft, Download } from "lucide-react";
 import type { Metadata } from "next";
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 import Container from "@/components/core/Container";
@@ -29,6 +29,21 @@ export default function ResumePage() {
             <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
               Resume
             </h1>
+            <Button
+              variant="outline"
+              size="sm"
+              className="absolute top-1/2 right-0 -translate-y-1/2"
+              render={
+                <a
+                  href={resumeConfig.downloadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+            >
+              <Download className="size-4" />
+              <span className="hidden sm:inline">Download</span>
+            </Button>
           </div>
         </FadeInView>
         <Separator />
