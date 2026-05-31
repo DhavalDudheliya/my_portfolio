@@ -211,4 +211,19 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
     type: "component",
     component: <Infinity className="size-3.5 text-blue-500" />,
   },
+  "Shadcn UI": {
+    type: "svg",
+    src: "/svgs/shadcn-ui_light.svg",
+    darkSrc: "/svgs/shadcn-ui_dark.svg",
+  },
+  Turborepo: {
+    type: "svg",
+    src: "/svgs/turborepo-icon-light.svg",
+    darkSrc: "/svgs/turborepo-icon-dark.svg",
+  },
+  "Socket.io": {
+    type: "svg",
+    src: "/svgs/socketio-icon-light.svg",
+    darkSrc: "/svgs/socketio-icon-dark.svg",
+  },
 };
