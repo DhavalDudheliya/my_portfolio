@@ -99,15 +99,17 @@ export const PROJECTS: Project[] = [
     technologies: [
       "Next.js",
       "Tailwind CSS",
-      "TypeScript",
+      "Shadcn UI",
       "Node.js",
       "Express",
       "Prisma",
       "PostgreSQL",
+      "Socket.io",
     ],
     status: "Building",
     links: {
       github: "https://github.com/DhavalDudheliya/supportHub",
+      live: "https://supporthub.bond",
     },
     featured: true,
   },

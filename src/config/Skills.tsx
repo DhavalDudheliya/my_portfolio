@@ -172,6 +172,13 @@ export const SKILLS: SkillCategory[] = [
         icon: { light: "/svgs/gitlab.svg", dark: "/svgs/gitlab.svg" },
       },
       {
+        name: "Turborepo",
+        icon: {
+          light: "/svgs/turborepo-icon-light.svg",
+          dark: "/svgs/turborepo-icon-dark.svg",
+        },
+      },
+      {
         name: "AWS",
         icon: { light: "/svgs/aws_light.svg", dark: "/svgs/aws_dark.svg" },
       },

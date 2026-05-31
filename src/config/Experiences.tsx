@@ -58,19 +58,23 @@ export const EXPERIENCES: Experience[] = [
           end: "03.2026",
         },
         employmentType: "Full-time",
-        description: `- Grew into a **Project Lead** role, leading a 3-developer team, driving technical architecture decisions, and conducting regular code reviews to maintain high code quality.
-- Built **SEO-optimized**, server-rendered web applications using **[Next.js](https://nextjs.org)** with **[Tailwind CSS](https://tailwindcss.com)** and **[Shadcn UI](https://ui.shadcn.com)** for polished, accessible interfaces.
-- Provisioned and managed cloud infrastructure on **AWS** (EC2, S3) with **CI/CD** pipelines, enabling automated and reliable deployments via **[Vercel](https://vercel.com)**.
-- Created an automated **IELTS test paper generator** from DOCX templates, reducing teacher workload by **75%** and streamlining test creation pipelines.
-- Implemented end-to-end **[Razorpay](https://razorpay.com)** payment gateway integration alongside secure user authentication and authorization using **[BetterAuth](https://better-auth.com)**.`,
+        description: `- Led a **3-developer team** as Project Lead, driving architecture decisions, conducting code reviews, mentoring juniors on clean code and API design patterns, and owning clear client communication end-to-end.
+- Owned and built an end-to-end **IELTS platform** covering test paper creation UI, generation engine, test-taking interface, and AI-powered evaluation, reducing teacher workload by **75%**.
+- Implemented **SEO** across the IELTS platform, improving search visibility across all pages.
+- Integrated **[Razorpay](https://razorpay.com)** payment gateway end-to-end and implemented secure user authentication with **[BetterAuth](https://better-auth.com)**, including session management and OAuth flows.
+- Architected a **Turborepo** monorepo consolidating **3 Next.js apps** and **1 Express API** with shared components and modules, eliminating code duplication across all products.
+- Managed production infrastructure across **AWS** (EC2, S3) and **[Vercel](https://vercel.com)** for reliable deployments and operations.`,
         icon: <Users className="size-4" />,
         skills: [
           "Team Leadership",
           "Project Management",
           "Next.js",
+          "Turborepo",
+          "Express",
           "Tailwind CSS",
           "Shadcn UI",
           "Razorpay",
+          "Better Auth",
           "AWS",
           "CI/CD",
           "Vercel",
@@ -85,19 +89,19 @@ export const EXPERIENCES: Experience[] = [
           end: "10.2025",
         },
         employmentType: "Full-time",
-        description: `- Architected scalable background job processing with **Redis** and **BullMQ**, improving application performance by **40%** across multiple production systems.
-- Engineered an **AI-powered calling system** using **[ElevenLabs](https://elevenlabs.io)** and **[Twilio](https://www.twilio.com)** with a queue-based worker architecture, automating **1,000+** daily follow-up calls for marketing campaigns.
-- Developed RESTful CRUD APIs using **[NestJS](https://nestjs.com)**, leveraging its modular structure for clean and organized backend development.
-- Designed and implemented a **Master-Slave** architecture for automated execution of outreach campaigns, enabling parallel processing of multiple campaigns simultaneously with reliable task distribution and fault tolerance.`,
+        description: `- Engineered an **AI-powered calling system** covering the campaign builder UI in **React** and the backend calling engine using **[ElevenLabs](https://elevenlabs.io)** and **[Twilio](https://www.twilio.com)**, automating **1,000+** daily follow-up calls for marketing campaigns.
+- Designed a **Master-Slave** architecture for outreach campaign execution, enabling parallel processing with reliable task distribution and fault tolerance.
+- Implemented **Redis** caching and **BullMQ** background job processing, improving performance across multiple production systems.
+- Developed RESTful APIs using **[NestJS](https://nestjs.com)** and **Express**, following clean backend architecture and reusable API design patterns.`,
         icon: <Code className="size-4" />,
         skills: [
           "Redis",
           "BullMQ",
+          "React",
           "NestJS",
+          "Express",
           "ElevenLabs",
           "Twilio",
-          "Stripe",
-          "Better Auth",
           "Node.js",
           "TypeScript",
         ],
