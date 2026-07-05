@@ -91,10 +91,10 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "4",
-    title: "SupportHub",
+    title: "SupportHub - CRM",
     slug: "supporthub",
     description:
-      "A Zendesk-inspired customer support web application currently in development. It features a comprehensive ticketing system and real-time chat capabilities to streamline customer service operations.",
+      "A multi-tenant CRM with tenant-isolated subdomains and strict workspace-level data boundaries. Features an automated email-to-ticket ingestion pipeline, AI auto-tagging with rule-based auto-assignment for routing, real-time updates over WebSockets, and hierarchical RBAC (Admin, Agent) across tenant environments.",
     thumbnail: "/projects/supporthub.png",
     technologies: [
       "Next.js",
@@ -104,6 +104,7 @@ export const PROJECTS: Project[] = [
       "Express",
       "Prisma",
       "PostgreSQL",
+      "Redis",
       "Socket.io",
     ],
     status: "Building",

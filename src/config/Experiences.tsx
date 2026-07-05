@@ -128,7 +128,8 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Full-time",
         description: `- Developed e-commerce features including shopping cart management and a **CMS-powered blog system** using **[Strapi](https://strapi.io)**, gaining hands-on experience with real-world product development.
-- Built modules for a cross-platform desktop application using **ElectronJS**, implementing core UI workflows and **RESTful API** integrations.
+- Built core modules for a cross-platform desktop application using **ElectronJS**, implementing **RBAC** and **RESTful API** integrations.
+- Engineered a server-side **video processing pipeline** using **[FFmpeg](https://ffmpeg.org)**, handling compression, format transformation, and dynamic overlay rendering for media-heavy workflows.
 - Managed server-state synchronization across React applications using **Redux** and **TanStack Query**.
 - Developed and consumed **RESTful APIs** with robust validation, error handling, and scalable architecture patterns.
 - Implemented end-to-end **[Stripe](https://stripe.com)** payment gateway integrations, handling payment flows, webhooks, and secure transaction management.`,
@@ -136,6 +137,7 @@ export const EXPERIENCES: Experience[] = [
         skills: [
           "React",
           "ElectronJS",
+          "FFmpeg",
           "Redux",
           "TanStack Query",
           "Node.js",
