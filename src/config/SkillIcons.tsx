@@ -21,6 +21,10 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
     type: "svg",
     src: "/svgs/nextjs_icon_dark.svg",
   },
+  Angular: {
+    type: "svg",
+    src: "/svgs/angular.svg",
+  },
   TypeScript: {
     type: "svg",
     src: "/svgs/typescript.svg",
@@ -49,9 +53,19 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
     type: "svg",
     src: "/svgs/nodejs.svg",
   },
+  PHP: {
+    type: "svg",
+    src: "/svgs/php.svg",
+    darkSrc: "/svgs/php_dark.svg",
+  },
   PostgreSQL: {
     type: "svg",
     src: "/svgs/postgresql.svg",
+  },
+  MySQL: {
+    type: "svg",
+    src: "/svgs/mysql-icon-light.svg",
+    darkSrc: "/svgs/mysql-icon-dark.svg",
   },
   MongoDB: {
     type: "svg",
@@ -77,6 +91,10 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
   Redis: {
     type: "svg",
     src: "/svgs/redis.svg",
+  },
+  RabbitMQ: {
+    type: "svg",
+    src: "/svgs/RabbitMQ.svg",
   },
   BullMQ: {
     type: "component",
@@ -213,7 +231,7 @@ export const SKILL_ICONS: Record<string, SkillIconType> = {
   },
   "Shadcn UI": {
     type: "svg",
-    src: "/svgs/shadcn-ui_light.svg",
+    src: "/svgs/shadcn-ui-light.svg",
     darkSrc: "/svgs/shadcn-ui_dark.svg",
   },
   Turborepo: {

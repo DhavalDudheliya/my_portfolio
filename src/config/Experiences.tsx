@@ -42,6 +42,30 @@ export type Experience = {
 
 export const EXPERIENCES: Experience[] = [
   {
+    id: "xbe",
+    companyName: "XBE",
+    companyLogo: "/assets/xbe_logo.png",
+    links: {
+      website: "https://www.x-b-e.com",
+      linkedin: "https://www.linkedin.com/company/xbe",
+    },
+    positions: [
+      {
+        id: "xbe-swe",
+        title: "Software Engineer",
+        employmentPeriod: {
+          start: "08.2026",
+        },
+        employmentType: "Full-time",
+        description: `- Software Engineer on the product engineering team, building and maintaining features for XBE's **construction logistics and dispatch platform**.`,
+        icon: <Code className="size-4" />,
+        skills: ["PHP", "Angular", "MySQL", "RabbitMQ", "AWS"],
+        isExpanded: true,
+      },
+    ],
+    isCurrentEmployer: true,
+  },
+  {
     id: "nexuslink",
     companyName: "NexusLink Services Pvt. Ltd.",
     companyLogo: "/assets/nexuslink_logo.png",
@@ -52,10 +76,10 @@ export const EXPERIENCES: Experience[] = [
     positions: [
       {
         id: "nexuslink-project-lead",
-        title: "Project Lead & Full-Stack Developer",
+        title: "Lead Full Stack Developer",
         employmentPeriod: {
           start: "10.2025",
-          end: "03.2026",
+          end: "07.2026",
         },
         employmentType: "Full-time",
         description: `- Led a **3-developer team** as Project Lead, driving architecture decisions, conducting code reviews, mentoring juniors on clean code and API design patterns, and owning clear client communication end-to-end.
@@ -79,7 +103,7 @@ export const EXPERIENCES: Experience[] = [
           "CI/CD",
           "Vercel",
         ],
-        isExpanded: true,
+        isExpanded: false,
       },
       {
         id: "nexuslink-fsd",
@@ -105,7 +129,7 @@ export const EXPERIENCES: Experience[] = [
           "Node.js",
           "TypeScript",
         ],
-        isExpanded: true,
+        isExpanded: false,
       },
     ],
     isCurrentEmployer: false,

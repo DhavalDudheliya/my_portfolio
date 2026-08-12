@@ -28,6 +28,10 @@ export const SKILLS: SkillCategory[] = [
         icon: { light: "/svgs/c-plusplus.svg", dark: "/svgs/c-plusplus.svg" },
       },
       {
+        name: "PHP",
+        icon: { light: "/svgs/php.svg", dark: "/svgs/php_dark.svg" },
+      },
+      {
         name: "HTML",
         icon: { light: "/svgs/html5.svg", dark: "/svgs/html5.svg" },
       },
@@ -54,6 +58,10 @@ export const SKILLS: SkillCategory[] = [
           light: "/svgs/nextjs_icon_dark.svg",
           dark: "/svgs/nextjs_icon_dark.svg",
         },
+      },
+      {
+        name: "Angular",
+        icon: { light: "/svgs/angular.svg", dark: "/svgs/angular.svg" },
       },
       {
         name: "Tailwind CSS",
@@ -131,6 +139,10 @@ export const SKILLS: SkillCategory[] = [
           dark: "/svgs/socketio-icon-dark.svg",
         },
       },
+      {
+        name: "RabbitMQ",
+        icon: { light: "/svgs/RabbitMQ.svg", dark: "/svgs/RabbitMQ.svg" },
+      },
     ],
   },
   {
@@ -146,6 +158,13 @@ export const SKILLS: SkillCategory[] = [
       {
         name: "PostgreSQL",
         icon: { light: "/svgs/postgresql.svg", dark: "/svgs/postgresql.svg" },
+      },
+      {
+        name: "MySQL",
+        icon: {
+          light: "/svgs/mysql-icon-light.svg",
+          dark: "/svgs/mysql-icon-dark.svg",
+        },
       },
       {
         name: "Redis",
