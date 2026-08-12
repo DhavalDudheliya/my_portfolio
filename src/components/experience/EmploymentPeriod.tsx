@@ -1,7 +1,5 @@
 "use client";
 
-import { InfinityIcon } from "lucide-react";
-
 import { calculateDuration } from "@/lib/utils";
 
 interface EmploymentPeriodProps {
@@ -19,17 +17,7 @@ export function EmploymentPeriod({ start, end }: EmploymentPeriodProps) {
         <div className="flex items-center gap-0.5">
           <span>{start}</span>
           <span className="font-mono">—</span>
-          {isOngoing ? (
-            <>
-              <InfinityIcon
-                className="size-4.5 translate-y-[0.5px]"
-                aria-hidden
-              />
-              <span className="sr-only">Present</span>
-            </>
-          ) : (
-            <span>{end}</span>
-          )}
+          <span>{isOngoing ? "Present" : end}</span>
         </div>
         <span className="text-muted-foreground/80 text-xs lowercase sm:ml-2">
           ({calculateDuration(start, end)})

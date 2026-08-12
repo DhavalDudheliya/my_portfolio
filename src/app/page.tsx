@@ -34,7 +34,7 @@ export default function Home() {
         <GitHubContributions />
         <Contact />
         <FeaturedBlogs />
-        <BooksSection />
+        {/* <BooksSection /> */}
       </Container>
     </>
   );
