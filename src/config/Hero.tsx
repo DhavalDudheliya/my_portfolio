@@ -7,7 +7,7 @@ import X from "@/components/svgs/X";
 export const heroConfig = {
   // Personal Information
   name: "Dhaval Dudheliya",
-  title: "Full Stack Developer",
+  title: "Software Engineer",
   avatar: "/assets/me.png",
 
   // Skills Configuration

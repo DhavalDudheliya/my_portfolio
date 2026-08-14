@@ -7,14 +7,14 @@ export const seoConfig = {
 
   // Site Information
   siteName: "Dhaval Dudheliya",
-  siteTitle: "Dhaval Dudheliya | Full Stack Developer",
+  siteTitle: "Dhaval Dudheliya | Software Engineer",
   siteDescription:
-    "Full Stack Developer specializing in building exceptional web applications with TypeScript, Node.js, React, Next.js, and modern technologies.",
+    "Software Engineer specializing in building exceptional web applications with TypeScript, Node.js, React, Next.js, and modern technologies.",
 
   // Author Information
   author: {
     name: "Dhaval Dudheliya",
-    jobTitle: "Full Stack Developer",
+    jobTitle: "Software Engineer",
     email: "dhavaldudheliya77@gmail.com", // Update with your email
   },
 
@@ -31,7 +31,7 @@ export const seoConfig = {
   // Default Keywords
   defaultKeywords: [
     "Dhaval Dudheliya",
-    "Full Stack Developer",
+    "Software Engineer",
     "React Developer",
     "Next.js Developer",
     "Web Developer",
@@ -59,12 +59,12 @@ export const seoConfig = {
   // Page-specific SEO
   pages: {
     home: {
-      title: "Dhaval Dudheliya | Full Stack Developer",
+      title: "Dhaval Dudheliya | Software Engineer",
       description:
-        "Full Stack Developer specializing in building exceptional web applications with TypeScript, Node.js, React, Next.js, and modern technologies. View my projects, experience, and skills.",
+        "Software Engineer specializing in building exceptional web applications with TypeScript, Node.js, React, Next.js, and modern technologies. View my projects, experience, and skills.",
       keywords: [
         "Dhaval Dudheliya",
-        "Full Stack Developer",
+        "Software Engineer",
         "Portfolio",
         "TypeScript",
         "Node.js",
