@@ -71,7 +71,7 @@ const Navbar = () => {
                 <span className="hidden md:inline-block">Search...</span>
               </div>
               <kbd className="hidden h-5 items-center gap-1 rounded border bg-zinc-100 px-1.5 font-mono text-[10px] font-medium text-zinc-500 opacity-100 select-none md:flex dark:bg-zinc-900">
-                <span className="text-xs">⌘</span>K
+                <span>Ctrl</span>K
               </kbd>
             </button>
             <ThemeToggleButton />
