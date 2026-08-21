@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 
+import ShimmerText from "@/components/ui/shimmer-text";
 import { cn } from "@/lib/utils";
 
 interface HeroDetailsProps {
@@ -65,12 +66,11 @@ const HeroDetails = ({ name, title }: HeroDetailsProps) => {
         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-        className={cn(
-          "from-foreground to-foreground/50 bg-linear-to-b bg-clip-text text-xl font-bold text-transparent",
-          "md:text-2xl lg:text-3xl",
-        )}
+        className={cn("text-xl font-bold", "md:text-2xl lg:text-3xl")}
       >
-        {title}
+        <ShimmerText duration={2} delay={2} className="text-foreground/70">
+          {title}
+        </ShimmerText>
       </motion.h1>
     </div>
   );
