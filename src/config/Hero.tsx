@@ -80,7 +80,7 @@ export const socialLinks = [
   {
     name: "LinkedIn",
     username: "@dhavaldudheliya1309",
-    href: "www.linkedin.com/in/dhavaldudheliya1309",
+    href: "https://www.linkedin.com/in/dhavaldudheliya1309",
     icon: <LinkedIn />,
   },
   {

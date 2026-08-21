@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 
+import ShimmerText from "@/components/ui/shimmer-text";
 import { cn } from "@/lib/utils";
 
 interface HeroDetailsProps {
@@ -54,23 +55,22 @@ const HeroDetails = ({ name, title }: HeroDetailsProps) => {
     <div className="flex flex-col gap-2 text-center md:text-left">
       <motion.h1
         aria-label={typeof name === "string" ? name : undefined}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, delay: 0.2 }}
+        initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         className={cn("text-3xl font-bold", "md:text-5xl lg:text-6xl")}
       >
         {renderAnimatedName(name)}
       </motion.h1>
       <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, delay: 0.3 }}
-        className={cn(
-          "from-foreground to-foreground/50 bg-linear-to-b bg-clip-text text-xl font-bold text-transparent",
-          "md:text-2xl lg:text-3xl",
-        )}
+        initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+        className={cn("text-xl font-bold", "md:text-2xl lg:text-3xl")}
       >
-        {title}
+        <ShimmerText duration={2} delay={2} className="text-foreground/70">
+          {title}
+        </ShimmerText>
       </motion.h1>
     </div>
   );

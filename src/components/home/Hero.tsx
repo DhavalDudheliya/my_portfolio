@@ -13,7 +13,14 @@ const Hero = () => {
   const { name, title, avatar, description } = heroConfig;
 
   return (
-    <Container className="mx-auto pb-12">
+    <Container className="relative mx-auto pb-12">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+      >
+        <div className="bg-foreground/[0.06] absolute -top-10 left-1/4 size-72 -translate-x-1/2 rounded-full blur-3xl" />
+        <div className="bg-foreground/[0.04] absolute top-24 right-0 size-80 rounded-full blur-3xl" />
+      </div>
       <div className="flex flex-col items-center gap-6 md:flex-row">
         <HeroImage avatar={avatar} name={name} />
         <HeroDetails name={name} title={title} />
